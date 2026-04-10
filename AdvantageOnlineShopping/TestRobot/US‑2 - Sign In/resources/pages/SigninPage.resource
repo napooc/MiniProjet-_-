@@ -8,19 +8,19 @@ Resource    ../jdd/signin_data.resource
 # ══════════════════════════════════════════════
 # Localisateurs — Navigation
 # ══════════════════════════════════════════════
-${LOC_USER_ICON}           css:.menuUserLink
+${LOC_USER_ICON}           xpath://a[@id='menuUserLink'][@aria-label='UserMenu']
 
 # ══════════════════════════════════════════════
 # Localisateurs — Formulaire de connexion
 # ══════════════════════════════════════════════
-${LOC_USERNAME_INPUT}      id:userNameInput
-${LOC_PASSWORD_INPUT}      id:passwordInput
-${LOC_SIGN_IN_BUTTON}      id:sign_in_btn
+${LOC_USERNAME_INPUT}      xpath://input[@name='username']
+${LOC_PASSWORD_INPUT}      xpath://input[@name='password']
+${LOC_SIGN_IN_BUTTON}      xpath://button[@id='sign_in_btn']
 
 # ══════════════════════════════════════════════
 # Localisateurs — Vérification post-connexion
 # ══════════════════════════════════════════════
-${LOC_USER_LOGGED_LABEL}   xpath://span[@class='menuUserLink']//label
+${LOC_USER_LOGGED_LABEL}   xpath://span[@class='hi-user containMiniTitle ng-binding']
 
 
 *** Keywords ***
@@ -32,17 +32,23 @@ Cliquer Sur Icone Utilisateur
     Click Element                    ${LOC_USER_ICON}
 
 Saisir Nom Utilisateur
-    [Documentation]    Saisit le nom d'utilisateur dans le champ Username du formulaire.
+    [Documentation]    Saisit le nom d'utilisateur (scrollIntoView + click pour déclencher secModel).
     [Arguments]    ${username}
-    Wait Until Element Is Visible    ${LOC_USERNAME_INPUT}    timeout=10s
-    Input Text                       ${LOC_USERNAME_INPUT}    ${username}
+    Wait Until Element Is Visible      ${LOC_USERNAME_INPUT}    timeout=10s
+    Wait Until Element Is Not Visible  css:.loader              timeout=15s
+    Execute Javascript    document.querySelector('[name="username"]').scrollIntoView({block:"center"})
+    Click Element    ${LOC_USERNAME_INPUT}
+    Input Text       ${LOC_USERNAME_INPUT}    ${username}
 
 Saisir Mot De Passe
-    [Documentation]    Saisit le mot de passe dans le champ Password du formulaire.
-    ...                Utilise Input Password (le texte ne s'affiche pas en clair dans les logs).
+    [Documentation]    Saisit le mot de passe via JS click (SVG overlay intercepte le clic natif).
     [Arguments]    ${password}
     Wait Until Element Is Visible    ${LOC_PASSWORD_INPUT}    timeout=10s
-    Input Password                   ${LOC_PASSWORD_INPUT}    ${password}
+    Execute Javascript    document.querySelector('[name="password"]').scrollIntoView({block:"center"})
+    Execute Javascript    document.querySelector('[name="password"]').click()
+    Input Password   ${LOC_PASSWORD_INPUT}    ${password}
+    # Clic sur username pour déclencher blur sur password et activer secModel
+    Execute Javascript    document.querySelector('[name="username"]').click()
 
 Cliquer Sur Sign In
     [Documentation]    Clique sur le bouton Sign In pour soumettre le formulaire de connexion.

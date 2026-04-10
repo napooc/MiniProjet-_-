@@ -10,8 +10,8 @@ ${IMPLICIT_WAIT}      5s
 # ══════════════════════════════════════════════
 # Données de test — CT_US2_01
 # PRÉREQUIS : Ce compte doit exister avant l'exécution.
-#             Vous pouvez utiliser le compte créé par CT_US1_01 :
-#             username = rimk_signup01 / password = SecurePass@123
+#             Créez le compte via CT_US1_01 en définissant username=rimkQA2026x
+#             puis lancez CT_US2_01. Password max 12 chars.
 # ══════════════════════════════════════════════
-${LOGIN_USERNAME}     rimk_signup01
-${LOGIN_PASSWORD}     SecurePass@123
+${LOGIN_USERNAME}     rimkQA2026x
+${LOGIN_PASSWORD}     SecPass123

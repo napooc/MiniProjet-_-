@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library     OperatingSystem
 Resource    ../resources/jdd/signin_data.resource
 
 
@@ -7,10 +8,15 @@ Resource    ../resources/jdd/signin_data.resource
 
 Suite Setup - Open Browser To AOS
     [Documentation]    Ouvre le navigateur et navigue vers le site AOS.
-    ...                Le navigateur est maximisé et un délai implicite est appliqué.
-    Open Browser          ${BASE_URL}    ${BROWSER}
+    ${options}=         Evaluate    selenium.webdriver.ChromeOptions()    modules=selenium.webdriver
+    Call Method         ${options}    add_argument    --no-sandbox
+    Call Method         ${options}    add_argument    --disable-dev-shm-usage
+    Call Method         ${options}    add_argument    --disable-extensions
+    Open Browser          ${BASE_URL}    ${BROWSER}    options=${options}
     Maximize Browser Window
     Set Selenium Implicit Wait    ${IMPLICIT_WAIT}
+    Wait Until Element Is Visible      xpath://a[@id='menuUserLink'][@aria-label='UserMenu']    timeout=20s
+    Wait Until Element Is Not Visible    css:.loader    timeout=15s
 
 Suite Teardown - Close Browser
     [Documentation]    Ferme le navigateur à la fin de la suite de tests.

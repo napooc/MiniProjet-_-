@@ -32,19 +32,17 @@ CT_US1_01 - Inscription avec données valides
     # Étape 3 : Cliquer sur Create New Account
     Cliquer Sur Créer Un Nouveau Compte
 
-    # Étape 4 : Renseigner tous les champs obligatoires avec des données valides
+    # Étape 4 : Renseigner les champs obligatoires avec des données valides
+    ${epoch}=              Get Time    epoch
+    ${unique_username}=    Set Variable    rimk${epoch}
+    ${unique_email}=       Set Variable    rimk${epoch}@testmail.com
     Remplir Formulaire Inscription
-    ...    username=${REG_USERNAME}
-    ...    email=${REG_EMAIL}
+    ...    username=${unique_username}
+    ...    email=${unique_email}
     ...    password=${REG_PASSWORD}
     ...    confirm_password=${REG_CONFIRM_PASSWORD}
     ...    first_name=${REG_FIRST_NAME}
     ...    last_name=${REG_LAST_NAME}
-    ...    phone=${REG_PHONE}
-    ...    country=${REG_COUNTRY}
-    ...    city=${REG_CITY}
-    ...    address=${REG_ADDRESS}
-    ...    zip=${REG_ZIP}
 
     # Étape 5 : Cocher la case "I agree to the advantageonlineshopping.com conditions"
     Accepter Conditions Utilisation
@@ -53,4 +51,4 @@ CT_US1_01 - Inscription avec données valides
     Cliquer Sur Bouton Register
 
     # Résultat attendu : Le compte est créé, l'utilisateur est sur la page d'accueil
-    Vérifier Succès Inscription
+    Vérifier Succès Inscription    ${unique_username}

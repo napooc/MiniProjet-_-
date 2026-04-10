@@ -12,14 +12,9 @@ ${IMPLICIT_WAIT}          5s
 # IMPORTANT : Le username doit être UNIQUE.
 #             Modifiez-le si le compte existe déjà.
 # ══════════════════════════════════════════════
-${REG_USERNAME}           rimk_signup01
-${REG_EMAIL}              rimk.signup01@testmail.com
-${REG_PASSWORD}           SecurePass@123
-${REG_CONFIRM_PASSWORD}   SecurePass@123
+${REG_USERNAME}           rimkQA2026x
+${REG_EMAIL}              rimkQA2026x@gmail.com
+${REG_PASSWORD}           SecPass123
+${REG_CONFIRM_PASSWORD}   SecPass123
 ${REG_FIRST_NAME}         Rim
 ${REG_LAST_NAME}          Kajjoune
-${REG_PHONE}              0612345678
-${REG_COUNTRY}            United States
-${REG_CITY}               Los Angeles
-${REG_ADDRESS}            123 Test Avenue
-${REG_ZIP}                90001
