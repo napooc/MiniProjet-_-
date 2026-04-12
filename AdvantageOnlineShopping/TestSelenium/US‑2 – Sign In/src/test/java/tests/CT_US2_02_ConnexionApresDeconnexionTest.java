@@ -41,6 +41,7 @@ public class CT_US2_02_ConnexionApresDeconnexionTest {
 
     private WebDriver  driver;
     private Properties config;
+    private String     username;
 
     private LoginPage  loginPage;
     private HomePage   homePage;
@@ -74,49 +75,38 @@ public class CT_US2_02_ConnexionApresDeconnexionTest {
         homePage   = new HomePage(driver);
         headerPage = new HeaderPage(driver);
 
-        // PRÉCONDITION : naviguer vers AOS et se connecter
+        // PRÉCONDITION : naviguer vers AOS et se connecter (connexion initiale)
+        username = config.getProperty("username");
         driver.get(config.getProperty("base.url"));
         homePage.waitForPageLoad();
-        loginPage.login(
-                config.getProperty("username"),
-                config.getProperty("password")
-        );
-        // Vérifier que la connexion initiale est réussie
+        loginPage.login(username, config.getProperty("password"));
         Assert.assertTrue(
                 headerPage.isUserLoggedIn(),
-                "[Setup] La connexion initiale a échoué – le compte existe-t-il ?"
+                "[Précondition] Connexion initiale échouée – le compte existe-t-il ?"
         );
     }
 
     // ── Test ───────────────────────────────────────────────────────────────────
 
-    @Test(description = "CT_US2_02 – Connexion après déconnexion")
+    @Test
     public void testConnexionApresDeconnexion() {
-
         // ── Étape 2 : Déconnexion ─────────────────────────────────────────────
         headerPage.logout();
 
         // ── Étape 3 : Vérifier l'état déconnecté ─────────────────────────────
-        homePage.waitForPageLoad();
-        Assert.assertFalse(
-                headerPage.isUserLoggedIn(),
-                "L'utilisateur est encore connecté après Sign Out"
+        Assert.assertTrue(
+                headerPage.isUserLoggedOut(),
+                "CT_US2_02 FAIL – L'utilisateur est encore connecté après Sign Out"
         );
 
-        // ── Étapes 4 & 5 : Saisie des identifiants ───────────────────────────
-        // ── Étape 6 : Clic Sign In ────────────────────────────────────────────
-        loginPage.login(
-                config.getProperty("username"),
-                config.getProperty("password")
-        );
+        // ── Étapes 4, 5, 6 : Saisir identifiants + Sign In ───────────────────
+        loginPage.login(username, config.getProperty("password"));
 
         // ── Étape 7 : Vérifier la reconnexion ────────────────────────────────
-        String expectedUsername = config.getProperty("username");
         String displayedUsername = headerPage.getLoggedInUsername();
-
         Assert.assertEquals(
                 displayedUsername,
-                expectedUsername,
+                username,
                 "CT_US2_02 FAIL – Le nom affiché après reconnexion ne correspond pas"
         );
     }

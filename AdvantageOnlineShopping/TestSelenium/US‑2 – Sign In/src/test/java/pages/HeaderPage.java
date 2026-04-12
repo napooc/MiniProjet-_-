@@ -12,16 +12,19 @@ import utils.WaitUtils;
  */
 public class HeaderPage {
 
-    private final WebDriver driver;
+    private final WebDriver        driver;
+    private final JavascriptExecutor js;
 
     // ── Localisateurs ──────────────────────────────────────────
     private final By userMenuIcon    = By.cssSelector("a#menuUserLink[aria-label='UserMenu']");
-    private final By signOutLink     = By.xpath("//a[normalize-space()='Sign Out']");
-    private final By userLoggedLabel = By.cssSelector("span.hi-user.containMiniTitle.ng-binding");
+    private final By signOutLink     = By.xpath("//label[@class='option roboto-medium ng-scope'][text()='Sign out']");
+    // Classe exacte identique à Robot : LOC_USER_LOGGED_LABEL
+    private final By userLoggedLabel = By.xpath("//span[@class='hi-user containMiniTitle ng-binding']");
     private final By loader          = By.cssSelector("div.loader");
 
     public HeaderPage(WebDriver driver) {
         this.driver = driver;
+        this.js     = (JavascriptExecutor) driver;
     }
 
     // ── Actions ────────────────────────────────────────────────
@@ -33,10 +36,12 @@ public class HeaderPage {
         driver.findElement(userMenuIcon).click();
     }
 
-    /** Clique sur "Sign Out" dans le panneau utilisateur. */
+    /** Clique sur "Sign Out" – JS click (robuste contre overlay) + attend fermeture menu. */
     public void clickSignOut() {
-        WaitUtils.waitForClickable(driver, signOutLink, 10);
-        driver.findElement(signOutLink).click();
+        WaitUtils.waitForVisible(driver, signOutLink, 10);
+        js.executeScript("arguments[0].click();", driver.findElement(signOutLink));
+        // Attendre que le menu se ferme (Sign out disparaît) = déconnexion traitée
+        WaitUtils.waitForInvisible(driver, signOutLink, 10);
         WaitUtils.waitForInvisible(driver, loader, 15);
     }
 
@@ -57,15 +62,28 @@ public class HeaderPage {
     /** True si le label de l'utilisateur connecté est visible. */
     public boolean isUserLoggedIn() {
         try {
-            WaitUtils.waitForVisible(driver, userLoggedLabel, 5);
+            WaitUtils.waitForVisible(driver, userLoggedLabel, 15);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
 
-    /** True si le panneau de login est accessible (utilisateur déconnecté). */
+    /**
+     * True si l'utilisateur est déconnecté.
+     * Vérifie via JS que le span hi-user a ng-hide (Angular = déconnecté) ou n'existe pas.
+     */
     public boolean isUserLoggedOut() {
-        return !isUserLoggedIn();
+        try {
+            Thread.sleep(1000);
+            Boolean hasNgHide = (Boolean) js.executeScript(
+                "var span = document.querySelector('span.hi-user.containMiniTitle.ng-binding');" +
+                "if (!span) return true;" +
+                "return span.classList.contains('ng-hide');"
+            );
+            return hasNgHide != null && hasNgHide;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
