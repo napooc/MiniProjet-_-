@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-12T17:42:19.469750" rpa="false" schemaversion="5">
+<suite id="s1" name="CT US5 03 - IncreaseQuantity AddSameProduct" source="C:\Users\fbernich\AppData\Roaming\Code\User\MiniProjet-Cap\AdvantageOnlineShopping\TestRobot\US-5 - Delete\suites\CT_US5_03 - IncreaseQuantity_AddSameProduct.robot">
+<kw name="Setup CT03" owner="setup_teardown" type="SETUP">
+<kw name="Global Setup" owner="setup_teardown">
+<kw name="Open Browser To Application" owner="browser_utils">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:42:20.115218" level="INFO">Opening browser 'chrome' to base url 'https://advantageonlineshopping.com/#/'.</msg>
+<arg>https://advantageonlineshopping.com/#/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-12T17:42:20.114907" elapsed="27.187883"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-12T17:42:47.304754" elapsed="0.308965"/>
+</kw>
+<kw name="Delete All Cookies" owner="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" start="2026-04-12T17:42:47.614349" elapsed="0.316243"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:42:47.932427" level="INFO">Executing JavaScript:
+window.localStorage.clear(); window.sessionStorage.clear();
+Without any arguments.</msg>
+<arg>window.localStorage.clear(); window.sessionStorage.clear();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:42:47.931110" elapsed="0.022188"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:42:47.954121" level="INFO">Opening url 'https://advantageonlineshopping.com/#/'</msg>
+<arg>https://advantageonlineshopping.com/#/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-12T17:42:47.953769" elapsed="0.072549"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=menuUser</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:42:48.026830" elapsed="0.511272"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:20.113894" elapsed="28.424761"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:20.113604" elapsed="28.425320"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:20.113186" elapsed="28.425925"/>
+</kw>
+<test id="s1-t1" name="CT_US5_03 - IncreaseQuantity AddSameProduct" line="15">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:42:48.601611" level="INFO">Étape 1: Vérifier que la page d'accueil s'affiche correctement</msg>
+<arg>Étape 1: Vérifier que la page d'accueil s'affiche correctement</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:42:48.589527" elapsed="0.012350"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=menuUser</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:42:48.612374" elapsed="0.109873"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:42:48.723659" elapsed="0.096533"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:42:49.154863" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-12T17:42:49.155356" level="FAIL">Page should have contained element 'xpath=//ul[contains(@class,'categoriesMenu') or contains(@class,'nav') or contains(@id,'nav')]' but did not.</msg>
+<arg>xpath=//ul[contains(@class,'categoriesMenu') or contains(@class,'nav') or contains(@id,'nav')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2026-04-12T17:42:48.821272" elapsed="0.386181">Page should have contained element 'xpath=//ul[contains(@class,'categoriesMenu') or contains(@class,'nav') or contains(@id,'nav')]' but did not.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Page d'accueil affichée correctement.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.225184" elapsed="0.000166"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Étape 2: Précondition - ajouter 1 produit puis vérifier la page Shopping Cart</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.319211" elapsed="0.000290"/>
+</kw>
+<kw name="Add One Product To Cart From Home" owner="ProductPage">
+<var>${product_name}</var>
+<var>${product_url}</var>
+<doc>Adds product at index 2 from the Popular Items section.
+Returns the product name and the URL of the product page.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.383148" elapsed="0.000153"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Produit ajouté: ${product_name}</arg>
+<arg>|</arg>
+<arg>URL fiche: ${product_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.476375" elapsed="0.000150"/>
+</kw>
+<kw name="Go To Shopping Cart Full Page" owner="ProductPage">
+<status status="NOT RUN" start="2026-04-12T17:42:49.569225" elapsed="0.000155"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//table[contains(@class,'cart') or contains(@ng-repeat,'product')]</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.677937" elapsed="0.000146"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.690102" elapsed="0.000239"/>
+</kw>
+<kw name="Get Cart Row Quantity For Product" owner="ProductPage">
+<var>${initial_qty}</var>
+<arg>${product_name}</arg>
+<status status="NOT RUN" start="2026-04-12T17:42:49.692169" elapsed="0.000122"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantité initiale dans le panier: ${initial_qty}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.694188" elapsed="0.000139"/>
+</kw>
+<kw name="Verify No Product Duplicates In Cart" owner="ProductPage">
+<doc>Asserts that no product name appears more than once as a separate line in the cart.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.704890" elapsed="0.000312"/>
+</kw>
+<kw name="Verify Cart Row Total Price" owner="ProductPage">
+<doc>Checks that at least one numeric price is visible on the page.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.709304" elapsed="0.000156"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Étape 3: Naviguer vers la fiche du même produit</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.711881" elapsed="0.000143"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>${product_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.722276" elapsed="0.000307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@name='save_to_cart']</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.724235" elapsed="0.000113"/>
+</kw>
+<kw name="Get Product Name" owner="ProductPage">
+<var>${page_product_name}</var>
+<status status="NOT RUN" start="2026-04-12T17:42:49.726047" elapsed="0.000211"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${page_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.727679" elapsed="0.000123"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Fiche produit affichée: ${page_product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.736607" elapsed="0.000211"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Étape 4: Saisir la quantité ${EXTRA_QTY} dans le champ quantité</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.758727" elapsed="0.003327"/>
+</kw>
+<kw name="Set Product Quantity" owner="ProductPage">
+<arg>${EXTRA_QTY}</arg>
+<status status="NOT RUN" start="2026-04-12T17:42:49.791928" elapsed="0.000333"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<var>${displayed_qty}</var>
+<arg>xpath=//input[@name='quantity' or @id='quantity' or contains(@ng-model,'quantity')]</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.801098" elapsed="0.000207"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${displayed_qty}</arg>
+<arg>${EXTRA_QTY}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.802037" elapsed="0.000151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantité saisie et affichée: ${displayed_qty}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.803022" elapsed="0.000085"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Étape 5: Cliquer sur Add to Cart</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.803952" elapsed="0.000090"/>
+</kw>
+<kw name="Click Add To Cart" owner="ProductPage">
+<status status="NOT RUN" start="2026-04-12T17:42:49.804940" elapsed="0.000092"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.805490" elapsed="0.000088"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${badge_qty}</var>
+<arg>var badge=document.querySelector('.cart.ng-binding,.cart span,.ng-binding.cart');</arg>
+<arg>if(badge){var m=badge.textContent.match(/\d+/); if(m)return parseInt(m[0]);}</arg>
+<arg>var link=document.querySelector('#shoppingCartLink');</arg>
+<arg>if(link){var m2=(link.textContent||'').match(/\d+/); if(m2)return parseInt(m2[0]);}</arg>
+<arg>return 0;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.806851" elapsed="0.000193"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${badge_qty} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.808298" elapsed="0.000108"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Icône panier mise à jour, quantité affichée: ${badge_qty}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.809170" elapsed="0.000081"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.810345" elapsed="0.000167"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=((//div[contains(@class,'removeProduct')]) | (//a[contains(@class,'remove') and contains(.,'REMOVE')]))[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.817693" elapsed="0.000192"/>
+</kw>
+<kw name="Verify No Product Duplicates In Cart" owner="ProductPage">
+<doc>Asserts that no product name appears more than once as a separate line in the cart.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.835884" elapsed="0.000260"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Aucun doublon dans le panier flottant.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.856221" elapsed="0.000229"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Étape 6: Retourner à la page Shopping Cart pour vérifier la quantité cumulée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.871778" elapsed="0.000209"/>
+</kw>
+<kw name="Go To Shopping Cart Full Page" owner="ProductPage">
+<status status="NOT RUN" start="2026-04-12T17:42:49.881547" elapsed="0.000164"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${expected_cumulated}</var>
+<arg>min(int(${initial_qty}) + int(${EXTRA_QTY}), int(${MAX_QTY}))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.886119" elapsed="0.000206"/>
+</kw>
+<kw name="Get Cart Row Quantity For Product" owner="ProductPage">
+<var>${actual_qty}</var>
+<arg>${product_name}</arg>
+<status status="NOT RUN" start="2026-04-12T17:42:49.888234" elapsed="0.000212"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${actual_qty}</arg>
+<arg>${expected_cumulated}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.903713" elapsed="0.000281"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantité cumulée attendue: ${expected_cumulated} | réelle: ${actual_qty}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.906228" elapsed="0.000230"/>
+</kw>
+<kw name="Verify Cart Row Total Price" owner="ProductPage">
+<doc>Checks that at least one numeric price is visible on the page.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.916670" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Prix total recalculé et affiché.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.928512" elapsed="0.000142"/>
+</kw>
+<kw name="Verify No Product Duplicates In Cart" owner="ProductPage">
+<doc>Asserts that no product name appears more than once as a separate line in the cart.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.953335" elapsed="0.000138"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Aucun doublon dans la page Shopping Cart.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.961063" elapsed="0.000179"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${empty_rows}</var>
+<arg>var rows=document.querySelectorAll('tr');</arg>
+<arg>var empty=0;</arg>
+<arg>rows.forEach(function(r){if((r.textContent||'').trim()===''){empty++;}});</arg>
+<arg>return empty;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.967417" elapsed="0.000181"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${empty_rows}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.973543" elapsed="0.000230"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Aucune ligne vide détectée dans le panier.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.976079" elapsed="0.000271"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Test CT_US5_03 complété avec succès</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-12T17:42:49.982528" elapsed="0.003692"/>
+</kw>
+<doc>Vérifier que l'ajout du même produit depuis sa fiche met à jour la quantité
+dans le panier (cumulée, max 10) sans créer de doublon.</doc>
+<status status="FAIL" start="2026-04-12T17:42:48.539418" elapsed="1.458217">Page should have contained element 'xpath=//ul[contains(@class,'categoriesMenu') or contains(@class,'nav') or contains(@id,'nav')]' but did not.</status>
+</test>
+<kw name="Teardown CT03" owner="setup_teardown" type="TEARDOWN">
+<kw name="Global Teardown" owner="setup_teardown">
+<kw name="Close Browser" owner="browser_utils">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-12T17:42:50.025231" elapsed="5.363927"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:50.018212" elapsed="5.371508"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:50.017501" elapsed="5.372381"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:42:50.015039" elapsed="5.374990"/>
+</kw>
+<doc>CT_US5_03 - Augmentation de quantité en ajoutant le même produit au panier</doc>
+<status status="FAIL" start="2026-04-12T17:42:19.478361" elapsed="35.911773"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CT US5 03 - IncreaseQuantity AddSameProduct" id="s1" pass="0" fail="1" skip="0">CT US5 03 - IncreaseQuantity AddSameProduct</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

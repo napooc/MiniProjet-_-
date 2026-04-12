@@ -1,0 +1,47 @@
+# Gitignore pour Tests Robot Framework US-4
+
+# Résultats d'exécution
+results/
+*.xml
+*.html
+
+# Screenshots et captures
+fichiers/CT_US4_01_Screenshots/
+fichiers/CT_US4_02_Screenshots/
+
+# Python et dépendances
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# OS
+.DS_Store
+Thumbs.db
+.project
+
+# Logs
+*.log
+
+# Cache Robot Framework
+.robot/
+
+# Fichiers temporaires
+.temp/
+*.tmp
+~$*
+
+# Except pour les fichiers de données gardés
+!ressources/jdd/Products_data.resource
+!ressources/jdd/Test_Config.resource
+!ressources/jdd/Selectors.resource

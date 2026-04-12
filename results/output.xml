@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-12T17:27:46.349106" rpa="false" schemaversion="5">
+<suite id="s1" name="CT US4 02 - DeleteProduct FromHomePage" source="C:\Users\fbernich\AppData\Roaming\Code\User\MiniProjet-Cap\AdvantageOnlineShopping\TestRobot\US-4 - Delete\suites\CT_US4_02 - DeleteProduct_FromHomePage.robot">
+<kw name="Setup CT02" owner="setup_teardown" type="SETUP">
+<kw name="Global Setup" owner="setup_teardown">
+<kw name="Open Browser To Application" owner="browser_utils">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:27:46.853820" level="INFO">Opening browser 'chrome' to base url 'https://advantageonlineshopping.com/#/'.</msg>
+<arg>https://advantageonlineshopping.com/#/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-12T17:27:46.853342" elapsed="6.700936"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-12T17:27:53.556137" elapsed="0.262691"/>
+</kw>
+<kw name="Delete All Cookies" owner="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" start="2026-04-12T17:27:53.820191" elapsed="0.119303"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:27:53.943518" level="INFO">Executing JavaScript:
+window.localStorage.clear(); window.sessionStorage.clear();
+Without any arguments.</msg>
+<arg>window.localStorage.clear(); window.sessionStorage.clear();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:27:53.940286" elapsed="0.019174"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:27:53.961210" level="INFO">Opening url 'https://advantageonlineshopping.com/#/'</msg>
+<arg>https://advantageonlineshopping.com/#/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-12T17:27:53.960106" elapsed="0.023696"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=menuUser</arg>
+<arg>timeout=10 s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:53.984762" elapsed="0.106470"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:27:46.852223" elapsed="7.239638"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:27:46.851668" elapsed="7.240726"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:27:46.850786" elapsed="7.241931"/>
+</kw>
+<test id="s1-t1" name="CT_US4_02 - DeleteProduct From Cart Icon" line="11">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:27:54.109449" level="INFO">Étape 1: Accéder à la page d'accueil</msg>
+<arg>Étape 1: Accéder à la page d'accueil</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.106005" elapsed="0.004035"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.111401" elapsed="0.189878"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:27:54.305926" level="INFO">Étape 2: Ajouter 1 produit au panier via US-3 Add Products Script</msg>
+<arg>Étape 2: Ajouter 1 produit au panier via US-3 Add Products Script</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.303907" elapsed="0.006429"/>
+</kw>
+<kw name="Add Products To Cart For US3" owner="AddProductsPage">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>css=.loader</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.375056" elapsed="5.031953"/>
+</kw>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>css=.loader</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.362039" elapsed="5.052075"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=menuUser</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.415875" elapsed="0.061762"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[2]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.480408" elapsed="0.057684"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[2]</arg>
+<arg>timeout=10s</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.478381" elapsed="0.060391"/>
+</kw>
+<kw name="Add Home Product To Cart By Index" owner="AddProductsPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:27:59.547608" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight * 0.65);
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight * 0.65);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.545963" elapsed="0.035210"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[${product_index}]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.582235" elapsed="0.054713"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[${product_index}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.638590" elapsed="0.317989"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:27:59.959793" level="INFO">Clicking element 'xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[2]'.</msg>
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[${product_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.958545" elapsed="0.230209"/>
+</kw>
+<msg time="2026-04-12T17:28:00.189528" level="INFO">${clicked} = True</msg>
+<var>${clicked}</var>
+<arg>Click Element</arg>
+<arg>xpath=(//a[contains(@href,'#/product/')][contains(.,'View Details')])[${product_index}]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T17:27:59.957214" elapsed="0.233012"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${clicked}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>var idx=arguments[0];</arg>
+<arg>var xp="(//a[contains(@href,'#/product/')][contains(.,'View Details')])["+idx+"]";</arg>
+<arg>var node=document.evaluate(xp, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;</arg>
+<arg>if(node){ node.click(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:28:00.192813" elapsed="0.000728"/>
+</kw>
+<status status="NOT RUN" start="2026-04-12T17:28:00.190919" elapsed="0.003186"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:00.190766" elapsed="0.003807"/>
+</if>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@name='save_to_cart']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:00.198208" elapsed="3.467439"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//button[@name='save_to_cart']</arg>
+<arg>timeout=10s</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-12T17:28:00.195333" elapsed="3.471076"/>
+</kw>
+<kw name="Get Product Name From Product Page" owner="AddProductsPage">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Text" owner="SeleniumLibrary">
+<arg>xpath=//h1[contains(@class,'roboto') or contains(@class,'ng-binding')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:28:03.675771" elapsed="0.103828"/>
+</kw>
+<msg time="2026-04-12T17:28:03.780982" level="INFO">${status} = PASS</msg>
+<msg time="2026-04-12T17:28:03.782702" level="INFO">${value} = </msg>
+<var>${status}</var>
+<var>${value}</var>
+<arg>Get Text</arg>
+<arg>xpath=//h1[contains(@class,'roboto') or contains(@class,'ng-binding')]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-04-12T17:28:03.674246" elapsed="0.111075"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS' and '${value}' != ''">
+<return>
+<value>${value}</value>
+<status status="NOT RUN" start="2026-04-12T17:28:03.789537" elapsed="0.000388"/>
+</return>
+<status status="NOT RUN" start="2026-04-12T17:28:03.787735" elapsed="0.002452"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:03.787414" elapsed="0.002973"/>
+</if>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:03.792592" level="INFO">Executing JavaScript:
+var h=document.querySelector('h1');return h ? (h.textContent||'').trim() : '';
+Without any arguments.</msg>
+<msg time="2026-04-12T17:28:03.814334" level="INFO">${fallback_name} = HP CHROMEBOOK 14 G1(ES)</msg>
+<var>${fallback_name}</var>
+<arg>var h=document.querySelector('h1');</arg>
+<arg>return h ? (h.textContent||'').trim() : '';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:28:03.790786" elapsed="0.024920"/>
+</kw>
+<if>
+<branch type="IF" condition="'${fallback_name}' == ''">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${fallback_name}</var>
+<arg>UNKNOWN_PRODUCT</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-04-12T17:28:03.832389" elapsed="0.013365"/>
+</kw>
+<status status="NOT RUN" start="2026-04-12T17:28:03.816493" elapsed="0.029733"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:03.816321" elapsed="0.030108"/>
+</if>
+<return>
+<value>${fallback_name}</value>
+<status status="PASS" start="2026-04-12T17:28:03.846578" elapsed="0.000402"/>
+</return>
+<msg time="2026-04-12T17:28:03.848541" level="INFO">${product_name} = HP CHROMEBOOK 14 G1(ES)</msg>
+<var>${product_name}</var>
+<status status="PASS" start="2026-04-12T17:28:03.672334" elapsed="0.179386"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:03.854054" level="INFO">Clicking button 'xpath=//button[@name='save_to_cart']'.</msg>
+<arg>xpath=//button[@name='save_to_cart']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:28:03.852726" elapsed="0.256447"/>
+</kw>
+<kw name="Wait And Confirm Alert" owner="AddProductsPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:04.115415" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:05</msg>
+<msg time="2026-04-12T17:28:09.592819" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-12T17:28:09.593993" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>timeout=5s</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="FAIL" start="2026-04-12T17:28:04.114422" elapsed="5.505016">Alert not found in 5 seconds.</status>
+</kw>
+<msg time="2026-04-12T17:28:09.620557" level="INFO">${alert_present} = False</msg>
+<var>${alert_present}</var>
+<arg>Alert Should Be Present</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T17:28:04.113110" elapsed="5.508611"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${alert_present}</arg>
+<arg>Handle Alert</arg>
+<arg>action=ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-12T17:28:09.622589" elapsed="0.002128"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:04.110889" elapsed="5.514404"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:09.626768" level="INFO">Opening url 'https://advantageonlineshopping.com/#/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-12T17:28:09.625831" elapsed="0.145524"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=menuUser</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:09.772255" elapsed="0.149192"/>
+</kw>
+<return>
+<value>${product_name}</value>
+<status status="PASS" start="2026-04-12T17:28:09.921999" elapsed="0.000446"/>
+</return>
+<msg time="2026-04-12T17:28:09.923026" level="INFO">${PRODUCT_1} = HP CHROMEBOOK 14 G1(ES)</msg>
+<var>${PRODUCT_1}</var>
+<arg>2</arg>
+<status status="PASS" start="2026-04-12T17:27:59.543505" elapsed="10.380384"/>
+</kw>
+<return>
+<value>${PRODUCT_1}</value>
+<status status="PASS" start="2026-04-12T17:28:09.924312" elapsed="0.000942"/>
+</return>
+<msg time="2026-04-12T17:28:09.926552" level="INFO">${product_1} = HP CHROMEBOOK 14 G1(ES)</msg>
+<var>${product_1}</var>
+<doc>Ajoute 1 produit depuis la home et retourne son nom.</doc>
+<status status="PASS" start="2026-04-12T17:27:54.359904" elapsed="15.568369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:09.932266" elapsed="0.047672"/>
+</kw>
+<kw name="Get Current Product Count" owner="ShoppingCartPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:09.988795" level="INFO">Executing JavaScript:
+var link=document.querySelector('#shoppingCartLink');var txt='';if(link){ txt=(link.textContent||'')+' '+(link.innerText||''); }var badge=document.querySelector('.cart.ng-binding,.cart span,.ng-binding.cart,.cart');if(badge){ txt += ' ' + (badge.textContent||''); }var m=txt.match(/d+/);return m ? m[0] : '0';
+Without any arguments.</msg>
+<msg time="2026-04-12T17:28:10.005677" level="INFO">${cart_count} = 0</msg>
+<var>${cart_count}</var>
+<arg>var link=document.querySelector('#shoppingCartLink');</arg>
+<arg>var txt='';</arg>
+<arg>if(link){ txt=(link.textContent||'')+' '+(link.innerText||''); }</arg>
+<arg>var badge=document.querySelector('.cart.ng-binding,.cart span,.ng-binding.cart,.cart');</arg>
+<arg>if(badge){ txt += ' ' + (badge.textContent||''); }</arg>
+<arg>var m=txt.match(/\d+/);</arg>
+<arg>return m ? m[0] : '0';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:28:09.986666" elapsed="0.019623"/>
+</kw>
+<return>
+<value>${cart_count}</value>
+<status status="PASS" start="2026-04-12T17:28:10.006806" elapsed="0.000768"/>
+</return>
+<msg time="2026-04-12T17:28:10.008417" level="INFO">${initial_count} = 0</msg>
+<var>${initial_count}</var>
+<status status="PASS" start="2026-04-12T17:28:09.982057" elapsed="0.026863"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:10.016672" level="INFO">Nombre initial de produits: 0</msg>
+<arg>Nombre initial de produits: ${initial_count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.013167" elapsed="0.008126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:10.026636" level="INFO">Étape 3: Cliquer sur l'icône panier pour ouvrir la page Shopping Cart</msg>
+<arg>Étape 3: Cliquer sur l'icône panier pour ouvrir la page Shopping Cart</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.023076" elapsed="0.004457"/>
+</kw>
+<kw name="Go To Shopping Cart Full Page" owner="ShoppingCartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.037754" elapsed="0.057672"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.096124" elapsed="0.345513"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:10.449039" level="INFO">Clicking element 'id=shoppingCartLink'.</msg>
+<arg>id=shoppingCartLink</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.446075" elapsed="0.194199"/>
+</kw>
+<msg time="2026-04-12T17:28:10.641051" level="INFO">${clicked} = True</msg>
+<var>${clicked}</var>
+<arg>Click Element</arg>
+<arg>id=shoppingCartLink</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.442933" elapsed="0.199227"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${clicked}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>var el=document.querySelector('#shoppingCartLink'); if(el){ el.click(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:28:10.646212" elapsed="0.000828"/>
+</kw>
+<status status="NOT RUN" start="2026-04-12T17:28:10.643726" elapsed="0.004803"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:10.643472" elapsed="0.005422"/>
+</if>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:10.667971" level="INFO">Current location contains 'shoppingCart'.</msg>
+<arg>shoppingCart</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.652279" elapsed="0.017846"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Location Should Contain</arg>
+<arg>shoppingCart</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.649425" elapsed="0.021551"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:10.035963" elapsed="0.635950"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:10.675835" level="INFO">Étape 4: Vérifier la présence du bouton REMOVE</msg>
+<arg>Étape 4: Vérifier la présence du bouton REMOVE</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.674386" elapsed="0.002808"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=((//a[contains(@class,'remove') and contains(.,'REMOVE')]) | (//div[contains(@class,'removeProduct')]))[1]</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.678290" elapsed="0.315349"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:10.996572" level="INFO">Étape 5: Capturer le nombre de lignes produit dans le panier</msg>
+<arg>Étape 5: Capturer le nombre de lignes produit dans le panier</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:10.995121" elapsed="0.002398"/>
+</kw>
+<kw name="Get Removable Items Count" owner="ShoppingCartPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:11.005972" level="INFO">Executing JavaScript:
+var countA=document.querySelectorAll('a.remove').length;var countDiv=document.querySelectorAll('div.removeProduct').length;return countA &gt; 0 ? countA : countDiv;
+Without any arguments.</msg>
+<msg time="2026-04-12T17:28:11.023393" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>var countA=document.querySelectorAll('a.remove').length;</arg>
+<arg>var countDiv=document.querySelectorAll('div.removeProduct').length;</arg>
+<arg>return countA &gt; 0 ? countA : countDiv;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.002170" elapsed="0.021760"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-12T17:28:11.024478" elapsed="0.000712"/>
+</return>
+<msg time="2026-04-12T17:28:11.026069" level="INFO">${initial_items} = 1</msg>
+<var>${initial_items}</var>
+<status status="PASS" start="2026-04-12T17:28:10.999861" elapsed="0.027381"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${initial_items} &gt;= 1</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.028314" elapsed="0.001901"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:11.037827" level="INFO">Étape 6: Supprimer un produit avec REMOVE</msg>
+<arg>Étape 6: Supprimer un produit avec REMOVE</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.033784" elapsed="0.005928"/>
+</kw>
+<kw name="Remove Product From Shopping Cart" owner="ShoppingCartPage">
+<kw name="Go To Shopping Cart Full Page" owner="ShoppingCartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.048838" elapsed="0.046317"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=shoppingCartLink</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.096058" elapsed="0.290943"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:11.390626" level="INFO">Clicking element 'id=shoppingCartLink'.</msg>
+<arg>id=shoppingCartLink</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.389691" elapsed="0.148341"/>
+</kw>
+<msg time="2026-04-12T17:28:11.539144" level="INFO">${clicked} = True</msg>
+<var>${clicked}</var>
+<arg>Click Element</arg>
+<arg>id=shoppingCartLink</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.387968" elapsed="0.152125"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${clicked}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>var el=document.querySelector('#shoppingCartLink'); if(el){ el.click(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:28:11.542476" elapsed="0.000591"/>
+</kw>
+<status status="NOT RUN" start="2026-04-12T17:28:11.541027" elapsed="0.002418"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:11.540926" elapsed="0.002726"/>
+</if>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:11.559712" level="INFO">Current location contains 'shoppingCart'.</msg>
+<arg>shoppingCart</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.546190" elapsed="0.014103"/>
+</kw>
+<arg>15x</arg>
+<arg>1s</arg>
+<arg>Location Should Contain</arg>
+<arg>shoppingCart</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.544051" elapsed="0.016602"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:11.046964" elapsed="0.513990"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.561293" elapsed="0.043962"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.605971" elapsed="0.304786"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:11.914840" level="INFO">Clicking element 'xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]'.</msg>
+<arg>xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.913195" elapsed="0.188710"/>
+</kw>
+<msg time="2026-04-12T17:28:12.102875" level="INFO">${removed} = True</msg>
+<var>${removed}</var>
+<arg>Click Element</arg>
+<arg>xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T17:28:11.911518" elapsed="0.192246"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${removed}">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.querySelectorAll("a.remove")[0].click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-04-12T17:28:12.106547" elapsed="0.000793"/>
+</kw>
+<status status="NOT RUN" start="2026-04-12T17:28:12.104936" elapsed="0.003145"/>
+</branch>
+<status status="PASS" start="2026-04-12T17:28:12.104830" elapsed="0.003664"/>
+</if>
+<arg>${product_1}</arg>
+<status status="PASS" start="2026-04-12T17:28:11.042649" elapsed="1.066201"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.113206" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-12T17:28:12.110695" elapsed="2.003869"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.119561" level="INFO">Étape 7: Vérifier que la page panier est toujours affichée</msg>
+<arg>Étape 7: Vérifier que la page panier est toujours affichée</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.117269" elapsed="0.003439"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:14.140297" level="INFO">Current location contains 'shoppingCart'.</msg>
+<arg>shoppingCart</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.122478" elapsed="0.019113"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.145571" level="INFO">Étape 8: Vérifier que le nombre de lignes produit a diminué de 1</msg>
+<arg>Étape 8: Vérifier que le nombre de lignes produit a diminué de 1</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.143573" elapsed="0.003973"/>
+</kw>
+<kw name="Get Removable Items Count" owner="ShoppingCartPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:14.157634" level="INFO">Executing JavaScript:
+var countA=document.querySelectorAll('a.remove').length;var countDiv=document.querySelectorAll('div.removeProduct').length;return countA &gt; 0 ? countA : countDiv;
+Without any arguments.</msg>
+<msg time="2026-04-12T17:28:14.174130" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>var countA=document.querySelectorAll('a.remove').length;</arg>
+<arg>var countDiv=document.querySelectorAll('div.removeProduct').length;</arg>
+<arg>return countA &gt; 0 ? countA : countDiv;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.155004" elapsed="0.020345"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-12T17:28:14.176146" elapsed="0.000895"/>
+</return>
+<msg time="2026-04-12T17:28:14.177812" level="INFO">${final_items} = 0</msg>
+<var>${final_items}</var>
+<status status="PASS" start="2026-04-12T17:28:14.152041" elapsed="0.026567"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.184671" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${final_items}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.181365" elapsed="0.004917"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.191766" level="INFO">Nombre de lignes avant/après suppression: 1 -&gt; 0</msg>
+<arg>Nombre de lignes avant/après suppression: ${initial_items} -&gt; ${final_items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.188835" elapsed="0.003993"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.196539" level="INFO">Étape 9: Vérifier le nombre entre parenthèses du texte TOTAL</msg>
+<arg>Étape 9: Vérifier le nombre entre parenthèses du texte TOTAL</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.194446" elapsed="0.003406"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>TOTAL</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.199428" elapsed="0.033795"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.237676" level="INFO">Étape 10: Vérifier que le panier est vide</msg>
+<arg>Étape 10: Vérifier que le panier est vide</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.235642" elapsed="0.002963"/>
+</kw>
+<kw name="Get Removable Items Count" owner="ShoppingCartPage">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:14.245107" level="INFO">Executing JavaScript:
+var countA=document.querySelectorAll('a.remove').length;var countDiv=document.querySelectorAll('div.removeProduct').length;return countA &gt; 0 ? countA : countDiv;
+Without any arguments.</msg>
+<msg time="2026-04-12T17:28:14.261553" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>var countA=document.querySelectorAll('a.remove').length;</arg>
+<arg>var countDiv=document.querySelectorAll('div.removeProduct').length;</arg>
+<arg>return countA &gt; 0 ? countA : countDiv;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.242539" elapsed="0.019849"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-04-12T17:28:14.263159" elapsed="0.001116"/>
+</return>
+<msg time="2026-04-12T17:28:14.265386" level="INFO">${remaining_items} = 0</msg>
+<var>${remaining_items}</var>
+<status status="PASS" start="2026-04-12T17:28:14.240367" elapsed="0.025791"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.270079" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${remaining_items}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.267923" elapsed="0.003171"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.276222" level="INFO">Étape 11: Vérifier l'état final de la page panier</msg>
+<arg>Étape 11: Vérifier l'état final de la page panier</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.272916" elapsed="0.005762"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-12T17:28:14.292938" level="INFO">Current location contains 'shoppingCart'.</msg>
+<arg>shoppingCart</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.280473" elapsed="0.013178"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-12T17:28:14.298032" level="INFO">Test CT_US4_02 complété avec succès</msg>
+<arg>Test CT_US4_02 complété avec succès</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.296048" elapsed="0.003961"/>
+</kw>
+<doc>Vérifier que la suppression d'un produit via l'icone panier et REMOVE fonctionne correctement</doc>
+<status status="PASS" start="2026-04-12T17:27:54.093249" elapsed="20.209078"/>
+</test>
+<kw name="Teardown CT02" owner="setup_teardown" type="TEARDOWN">
+<kw name="Global Teardown" owner="setup_teardown">
+<kw name="Close Browser" owner="browser_utils">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-04-12T17:28:14.346158" elapsed="3.818273"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:14.344637" elapsed="3.821637"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:14.342900" elapsed="3.824015"/>
+</kw>
+<status status="PASS" start="2026-04-12T17:28:14.340912" elapsed="3.826279"/>
+</kw>
+<doc>CT_US4_02 - Suppression d'un produit via l'icone panier puis REMOVE</doc>
+<status status="PASS" start="2026-04-12T17:27:46.359827" elapsed="31.807601"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CT US4 02 - DeleteProduct FromHomePage" id="s1" pass="1" fail="0" skip="0">CT US4 02 - DeleteProduct FromHomePage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
