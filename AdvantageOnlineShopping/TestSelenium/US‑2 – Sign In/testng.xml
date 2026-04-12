@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AOS - US2 Sign In" verbose="1">
+    <test name="CT_US2_02 - Connexion après déconnexion">
+        <classes>
+            <class name="tests.CT_US2_02_ConnexionApresDeconnexionTest"/>
+        </classes>
+    </test>
+</suite>
