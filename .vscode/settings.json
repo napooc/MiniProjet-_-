@@ -56,5 +56,6 @@
     "python.analysis.ignore": [
         "**/*.robot",
         "**/*.resource"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
