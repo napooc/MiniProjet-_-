@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+**/target/
+results/
+log.html
+report.html
+output.xml
+selenium-screenshot-*.png
