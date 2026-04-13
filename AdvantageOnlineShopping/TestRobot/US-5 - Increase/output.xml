@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-13T17:43:53.077651" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites" source="C:\Users\rouchaya\OneDrive - Capgemini\Bureau\ADVANTAGE123\AdvantageOnlineShopping\TestRobot\US-5 - Increase\suites">
+<suite id="s1-s1" name="Panier" source="C:\Users\rouchaya\OneDrive - Capgemini\Bureau\ADVANTAGE123\AdvantageOnlineShopping\TestRobot\US-5 - Increase\suites\panier">
+<suite id="s1-s1-s1" name="CT US5 03" source="C:\Users\rouchaya\OneDrive - Capgemini\Bureau\ADVANTAGE123\AdvantageOnlineShopping\TestRobot\US-5 - Increase\suites\panier\CT_US5_03.robot">
+<test id="s1-s1-s1-t1" name="CT_US5_03_Augmenter_Quantite_En_Reajoutant_Produit" line="21">
+<kw name="Open Browser And Navigate To Site" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-13T17:43:53.511902" level="INFO">Opening browser 'chrome' to base url 'https://www.advantageonlineshopping.com/#/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-13T17:43:53.511438" elapsed="87.254493"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-13T17:45:20.766825" elapsed="0.041728"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-04-13T17:45:20.808817" elapsed="0.001406"/>
+</kw>
+<doc>Ouvre le navigateur, maximise et navigue vers BASE_URL</doc>
+<status status="PASS" start="2026-04-13T17:43:53.509980" elapsed="87.300368"/>
+</kw>
+<kw name="Go To Category" owner="cart">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-04-13T17:45:20.814324" level="INFO">Opening url 'https://www.advantageonlineshopping.com/#/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-13T17:45:20.814156" elapsed="0.009411"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-04-13T17:45:41.004746" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-13T17:45:41.005119" level="FAIL">Element 'xpath=//h1[contains(@class,'roboto-bold')]' not visible after 20 seconds.</msg>
+<arg>xpath=//h1[contains(@class,'roboto-bold')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-13T17:45:20.823801" elapsed="20.186126">Element 'xpath=//h1[contains(@class,'roboto-bold')]' not visible after 20 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[text()='${category_text}']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.010265" elapsed="0.000058"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//span[text()='${category_text}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.010462" elapsed="0.000028"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[normalize-space()='${category_text}']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.010580" elapsed="0.000023"/>
+</kw>
+<arg>${CATEGORY}</arg>
+<doc>Va à la page d'accueil et clique sur la catégorie souhaitée</doc>
+<status status="FAIL" start="2026-04-13T17:45:20.813546" elapsed="20.197234">Element 'xpath=//h1[contains(@class,'roboto-bold')]' not visible after 20 seconds.</status>
+</kw>
+<kw name="Select Product From Category" owner="cart">
+<arg>${PRODUCT_NAME}</arg>
+<doc>Trouve le produit dans la liste et clique dessus</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.011411" elapsed="0.000065"/>
+</kw>
+<kw name="Set Product Quantity" owner="cart">
+<arg>${CLICS_PREMIER_AJOUT}</arg>
+<doc>Clique ${times} fois sur le bouton + pour augmenter la quantité</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.013385" elapsed="0.000055"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>filename=01_produit_avant_1er_ajout.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.013808" elapsed="0.000050"/>
+</kw>
+<kw name="Add Product To Cart" owner="cart">
+<doc>Fait défiler jusqu'au bouton Add to Cart et clique dessus</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.014147" elapsed="0.000045"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.014502" elapsed="0.000048"/>
+</kw>
+<kw name="Open Cart" owner="cart">
+<doc>Clique sur l'icône panier pour ouvrir le panier</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.014899" elapsed="0.000045"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>filename=02_panier_apres_1er_ajout.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.015208" elapsed="0.000051"/>
+</kw>
+<kw name="Lire Quantite Produit Dans Panier" owner="cart">
+<var>${quantite_apres_1er_ajout}</var>
+<arg>${PRODUCT_NAME_UPPER}</arg>
+<doc>Retourne la quantité (nombre entier) d'un produit dans le panier</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.015831" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantité après le 1er ajout : ${quantite_apres_1er_ajout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.016561" elapsed="0.000123"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${quantite_apres_1er_ajout} &gt; 0</arg>
+<arg>msg=Le produit ${PRODUCT_NAME_UPPER} n'est pas présent dans le panier après le 1er ajout</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.018527" elapsed="0.000128"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//h3[normalize-space()='${PRODUCT_NAME_UPPER}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.019022" elapsed="0.000055"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(@class,'roboto-light')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.019364" elapsed="0.000038"/>
+</kw>
+<kw name="Set Product Quantity" owner="cart">
+<arg>${CLICS_DEUXIEME_AJOUT}</arg>
+<doc>Clique ${times} fois sur le bouton + pour augmenter la quantité</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.020773" elapsed="0.000090"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>filename=03_produit_avant_2eme_ajout.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.021357" elapsed="0.000057"/>
+</kw>
+<kw name="Add Product To Cart" owner="cart">
+<doc>Fait défiler jusqu'au bouton Add to Cart et clique dessus</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.021793" elapsed="0.000055"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.022341" elapsed="0.000058"/>
+</kw>
+<kw name="Open Cart" owner="cart">
+<doc>Clique sur l'icône panier pour ouvrir le panier</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.022759" elapsed="0.000049"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>filename=04_panier_final.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.023147" elapsed="0.000049"/>
+</kw>
+<kw name="Lire Quantite Produit Dans Panier" owner="cart">
+<var>${quantite_finale}</var>
+<arg>${PRODUCT_NAME_UPPER}</arg>
+<doc>Retourne la quantité (nombre entier) d'un produit dans le panier</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.023594" elapsed="0.000051"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Quantité finale : ${quantite_finale}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.023970" elapsed="0.000051"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${quantite_finale} &gt; ${quantite_apres_1er_ajout}</arg>
+<arg>msg=La quantité n'a pas augmenté : avant=${quantite_apres_1er_ajout} après=${quantite_finale}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.024273" elapsed="0.000041"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${quantite_attendue}</var>
+<arg>${quantite_apres_1er_ajout} + ${CLICS_DEUXIEME_AJOUT}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.024548" elapsed="0.000037"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${quantite_finale}</arg>
+<arg>${quantite_attendue}</arg>
+<arg>msg=La quantité attendue est ${quantite_attendue} mais le panier affiche ${quantite_finale}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="NOT RUN" start="2026-04-13T17:45:41.024899" elapsed="0.000056"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-04-13T17:45:41.153186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-04-13T17:45:41.026601" elapsed="0.126835"/>
+</kw>
+<kw name="Close Browser Session" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-13T17:45:41.154415" elapsed="2.428383"/>
+</kw>
+<doc>Ferme le navigateur</doc>
+<status status="PASS" start="2026-04-13T17:45:41.153874" elapsed="2.429169"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>AND</arg>
+<arg>Close Browser Session</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2026-04-13T17:45:41.025852" elapsed="2.557250"/>
+</kw>
+<doc>Vérifier que la quantité s'additionne correctement quand on ajoute
+deux fois le même produit au panier.</doc>
+<tag>CT_US5_03</tag>
+<tag>panier</tag>
+<tag>quantite</tag>
+<tag>valid</tag>
+<status status="FAIL" start="2026-04-13T17:43:53.508425" elapsed="110.075195">Element 'xpath=//h1[contains(@class,'roboto-bold')]' not visible after 20 seconds.</status>
+</test>
+<doc>CT_US5_03 – Augmenter le nombre d'items en ré-ajoutant le même produit avec une nouvelle quantité</doc>
+<status status="FAIL" start="2026-04-13T17:43:53.133657" elapsed="110.450840"/>
+</suite>
+<status status="FAIL" start="2026-04-13T17:43:53.131850" elapsed="110.453741"/>
+</suite>
+<status status="FAIL" start="2026-04-13T17:43:53.081934" elapsed="110.504349"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">CT_US5_03</stat>
+<stat pass="0" fail="1" skip="0">panier</stat>
+<stat pass="0" fail="1" skip="0">quantite</stat>
+<stat pass="0" fail="1" skip="0">valid</stat>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="0" fail="1" skip="0">Suites</stat>
+<stat name="Panier" id="s1-s1" pass="0" fail="1" skip="0">Suites.Panier</stat>
+<stat name="CT US5 03" id="s1-s1-s1" pass="0" fail="1" skip="0">Suites.Panier.CT US5 03</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
