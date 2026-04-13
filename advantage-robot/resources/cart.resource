@@ -47,6 +47,8 @@ Lire Quantite Produit Dans Panier
     [Arguments]    ${product_name_upper}
     [Documentation]    Retourne la quantité (nombre entier) d'un produit dans le panier
     Wait Until Element Is Visible    xpath=//h3[normalize-space()='${product_name_upper}']    ${TIMEOUT}
+    Wait Until Element Is Visible    xpath=//h3[normalize-space()='${product_name_upper}']/following-sibling::label[1]    ${TIMEOUT}
     ${qty_texte}=    Get Text    xpath=//h3[normalize-space()='${product_name_upper}']/following-sibling::label[1]
+    Should Not Be Empty    ${qty_texte}    msg=Le label de quantité est vide pour ${product_name_upper}
     ${qty_nombre}=    Evaluate    int(re.search(r'[0-9]+', '${qty_texte}').group())    modules=re
     RETURN    ${qty_nombre}

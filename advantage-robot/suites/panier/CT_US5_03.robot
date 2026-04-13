@@ -3,17 +3,18 @@
 Documentation    CT_US5_03 – Augmenter le nombre d'items en ré-ajoutant le même produit avec une nouvelle quantité
 Resource        ../../resources/common.resource
 Resource        ../../resources/cart.resource
+Resource        ../../fichiers/jdd_CT_US5.robot
 
 Test Setup      Open Browser And Navigate To Site
-Test Teardown   Close Browser Session
+Test Teardown   Run Keywords    Capture Page Screenshot    AND    Close Browser Session
 
 
 *** Variables ***
-${CATEGORY}               TABLETS
-${PRODUCT_NAME}           HP ElitePad 1000 G2
-${PRODUCT_NAME_UPPER}     HP ELITEPAD 1000 G2 TABLET
-${CLICS_PREMIER_AJOUT}    2
-${CLICS_DEUXIEME_AJOUT}   1
+${CATEGORY}               ${JDD_CATEGORY}
+${PRODUCT_NAME}           ${JDD_PRODUCT_NAME}
+${PRODUCT_NAME_UPPER}     ${JDD_PRODUCT_NAME_UPPER}
+${CLICS_PREMIER_AJOUT}    ${JDD_CLICS_PREMIER_AJOUT}
+${CLICS_DEUXIEME_AJOUT}   ${JDD_CLICS_DEUXIEME_AJOUT}
 
 
 *** Test Cases ***
@@ -29,11 +30,13 @@ CT_US5_03_Augmenter_Quantite_En_Reajoutant_Produit
 
     # Cliquer 2 fois sur le bouton + puis ajouter au panier
     Set Product Quantity        ${CLICS_PREMIER_AJOUT}
+    Capture Page Screenshot    filename=01_produit_avant_1er_ajout.png
     Add Product To Cart
     Sleep    2s
 
     # Ouvrir le panier et vérifier que le produit est présent avec sa quantité
     Open Cart
+    Capture Page Screenshot    filename=02_panier_apres_1er_ajout.png
     ${quantite_apres_1er_ajout}=    Lire Quantite Produit Dans Panier    ${PRODUCT_NAME_UPPER}
     Log    Quantité après le 1er ajout : ${quantite_apres_1er_ajout}
     Should Be True    ${quantite_apres_1er_ajout} > 0
@@ -46,12 +49,14 @@ CT_US5_03_Augmenter_Quantite_En_Reajoutant_Produit
 
     # Cliquer 1 fois sur le bouton + puis ajouter au panier
     Set Product Quantity        ${CLICS_DEUXIEME_AJOUT}
+    Capture Page Screenshot    filename=03_produit_avant_2eme_ajout.png
     Add Product To Cart
     Sleep    2s
 
     # --- VERIFICATION FINALE ---
     # Retourner au panier et vérifier que la quantité a bien augmenté
     Open Cart
+    Capture Page Screenshot    filename=04_panier_final.png
     ${quantite_finale}=    Lire Quantite Produit Dans Panier    ${PRODUCT_NAME_UPPER}
     Log    Quantité finale : ${quantite_finale}
 
