@@ -63,7 +63,16 @@ Get Current Product Count
     ...    return m ? m[0] : '0';
     RETURN    ${cart_count}
 
-
+Remove Product From Shopping Cart
+    [Arguments]    ${product_name}
+    Go To Shopping Cart Full Page
+    Wait Until Element Is Visible    xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]    timeout=15s
+    Scroll Element Into View    xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]
+    ${removed}=    Run Keyword And Return Status    Click Element    xpath=(//a[contains(@class,'remove') and contains(.,'REMOVE')])[1]
+    IF    not ${removed}
+        Execute JavaScript    document.querySelectorAll("a.remove")[0].click();
+    END
+    
 Remove Product From Floating Cart
     [Arguments]    ${product_name}
     ${removed_in_floating}=    Run Keyword And Return Status
