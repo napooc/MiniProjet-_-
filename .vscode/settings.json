@@ -1,0 +1,61 @@
+{
+    // ════════════════════════════════════════════════════════════════
+    // VS CODE SETTINGS — MiniProjet Robot Framework
+    // ════════════════════════════════════════════════════════════════
+    //
+    // WHY THIS FILE EXISTS:
+    //   VS Code does not know by default that .resource and .robot files
+    //   are Robot Framework files. This file tells it exactly that.
+    //   It also configures the RobotCode extension (the intellisense
+    //   plugin that gives you autocompletion and syntax highlighting).
+    //
+    // WHERE IT LIVES: .vscode/settings.json at the workspace root.
+    //   Settings here apply to EVERYONE opening this folder in VS Code.
+    // ════════════════════════════════════════════════════════════════
+
+    // ─── FILE ASSOCIATIONS ───────────────────────────────────────────
+    // Tells VS Code which language to use for which file extension.
+    // Without this, .resource files appear as plain text (no colors).
+    "files.associations": {
+        "*.robot":    "robotframework",   // .robot = test suite files
+        "*.resource": "robotframework"    // .resource = keyword/data library files
+    },
+
+    // ─── ROBOTCODE EXTENSION SETTINGS ───────────────────────────────
+    // RobotCode is the VS Code extension for Robot Framework.
+    //
+    // WHY HARDCODE THE PATH?
+    //   Your project has a .venv virtual environment at the workspace root.
+    //   This venv contains robotframework + seleniumlibrary.
+    //   RobotCode must use THIS Python (not the system Python) so it can find
+    //   all Robot Framework keywords, libraries, and resources.
+    //   The .venv/Scripts/python.exe is the interpreter for this project.
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "robotcode.python.defaultInterpreter": "${workspaceFolder}/.venv/Scripts/python.exe",
+
+    // ─── EDITOR SETTINGS FOR .robot / .resource FILES ───────────────
+    // Robot Framework uses 4 spaces (or 2) as separator between tokens.
+    // Setting tabSize=4 and insertSpaces=true prevents tab characters
+    // which would break Robot Framework syntax.
+    "[robotframework]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": false
+    },
+
+    // ─── EXCLUDE OUTPUT FOLDERS FROM SEARCH ─────────────────────────
+    // The fichiers/ folders contain auto-generated HTML/XML reports.
+    // We exclude them so they don't pollute your search results.
+    "search.exclude": {
+        "**/fichiers/**": true
+    },
+
+    // ─── PYTHON ANALYSIS ─────────────────────────────────────────────
+    // Suppress Pylance warnings for Robot Framework variables like ${VAR}
+    // which Python analysis does not understand.
+    "python.analysis.ignore": [
+        "**/*.robot",
+        "**/*.resource"
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
+}
