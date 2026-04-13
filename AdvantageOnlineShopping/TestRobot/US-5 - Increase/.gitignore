@@ -1,0 +1,28 @@
+# Robot Framework - Outputs
+fichiers/*.html
+fichiers/*.xml
+fichiers/*.png
+fichiers/log.html
+fichiers/report.html
+fichiers/output.xml
+
+# Screenshots
+*screenshot*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
