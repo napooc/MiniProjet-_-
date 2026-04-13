@@ -390,7 +390,7 @@ mvn test
 
 ### Prérequis
 
-1. **Java 11+** installé → vérifier avec `java -version`
+1. **Java 17+** installé → vérifier avec `java -version`
 2. **Maven 3.6+** installé → vérifier avec `mvn -version`
 3. **Google Chrome** installé (version récente)
 4. **Connexion internet** (pour télécharger ChromeDriver via WebDriverManager)
