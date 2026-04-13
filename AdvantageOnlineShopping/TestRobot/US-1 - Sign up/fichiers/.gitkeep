@@ -1,0 +1,4 @@
+# Ce dossier est destiné à stocker les résultats d'exécution des tests.
+# Exemples : output.xml, log.html, report.html, screenshots
+# Lancez les tests depuis le dossier suites/ avec la commande :
+#   robot --outputdir ../fichiers CT_US1_01_signup_valid.robot

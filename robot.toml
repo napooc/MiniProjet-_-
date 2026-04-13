@@ -1,0 +1,36 @@
+# ════════════════════════════════════════════════════════════════════
+# robot.toml — Robot Framework Project Configuration
+# ════════════════════════════════════════════════════════════════════
+#
+# WHY THIS FILE?
+#   robot.toml is the configuration file read by the RobotCode extension
+#   and also by the `robot` command when you run tests.
+#   It tells Robot Framework WHERE your source files are, what PYTHON
+#   paths to include, and default options so you don't have to repeat
+#   them on the command line every time.
+#
+# WHERE IT LIVES: workspace root (next to README.md and AdvantageOnlineShopping/)
+# ════════════════════════════════════════════════════════════════════
+
+# ─── ROOT PATHS ──────────────────────────────────────────────────────
+# "paths" = where Robot Framework will look for .robot files to discover.
+# The dot "." means "start from the workspace root and find everything".
+paths = ["."]
+
+# ─── PYTHON PATH ─────────────────────────────────────────────────────
+# Extra directories added to sys.path so Python can resolve imports.
+# "." means the workspace root itself is on the Python path.
+python_path = ["."]
+
+# ─── OUTPUT SETTINGS ─────────────────────────────────────────────────
+# Where auto-generated reports land when you run from the root.
+# Individual suites override this via their own `robot` command.
+output_dir = "results"
+
+# ─── ROBOTCODE LSP SETTINGS ──────────────────────────────────────────
+# These tell the Language Server (the intellisense engine) to resolve
+# .resource imports correctly from the workspace root.
+[tool.robotcode]
+# Ensures all .resource and .robot files in the project are indexed
+# for autocompletion and "Go to Definition".
+robot_files = ["**/*.robot", "**/*.resource"]
