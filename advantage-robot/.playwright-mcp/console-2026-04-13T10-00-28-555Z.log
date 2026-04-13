@@ -1,0 +1,59 @@
+[    2996ms] [LOG] Extracting file: services.properties @ https://www.advantageonlineshopping.com/main.min.js:5079
+[    3622ms] [LOG] File extracted:  @ https://www.advantageonlineshopping.com/main.min.js:12086
+[    3623ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3623ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3623ms] [LOG]     @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3623ms] [LOG] ==========================================================================  @ https://www.advantageonlineshopping.com/main.min.js:12049
+[    3623ms] [LOG] ==========================================================================   @ https://www.advantageonlineshopping.com/main.min.js:12049
+[    3624ms] [LOG] Extracted file:  @ https://www.advantageonlineshopping.com/main.min.js:12005
+[    3624ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3624ms] [LOG] Recieve:  @ https://www.advantageonlineshopping.com/main.min.js:12007
+[    3624ms] [LOG]  @ https://www.advantageonlineshopping.com/main.min.js:12008
+[    3624ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3624ms] [LOG] Catalog path: https://www.advantageonlineshopping.com/catalog/api/v1/ @ https://www.advantageonlineshopping.com/main.min.js:12011
+[    3624ms] [LOG] Order path: https://www.advantageonlineshopping.com/order/api/v1/ @ https://www.advantageonlineshopping.com/main.min.js:12011
+[    3624ms] [LOG] Account WSDL (Web Services Description Language) path: https://www.advantageonlineshopping.com/accountservice/ws/ @ https://www.advantageonlineshopping.com/main.min.js:12011
+[    3624ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3625ms] [LOG] ==========================================================================  @ https://www.advantageonlineshopping.com/main.min.js:12049
+[    3625ms] [LOG] ==========================================================================   @ https://www.advantageonlineshopping.com/main.min.js:12049
+[    3625ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3625ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3625ms] [LOG]     @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3730ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    3730ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[    3731ms] [LOG] Path: https://www.advantageonlineshopping.com/catalog/api/v1/DemoAppConfig/parameters/by_tool/ALL @ https://www.advantageonlineshopping.com/main.min.js:12028
+[    3763ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://www.advantageonlineshopping.com/#/:0
+[    4011ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[    4011ms] [LOG] {data: Object, status: 200, headers: , config: Object, statusText: } @ https://www.advantageonlineshopping.com/main.min.js:12033
+[    4011ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    4012ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    4012ms] [LOG] ========================   Reading wsdl  ================================= @ https://www.advantageonlineshopping.com/main.min.js:12020
+[    4012ms] [LOG] url: https://www.advantageonlineshopping.com/accountservice/ws/ @ https://www.advantageonlineshopping.com/main.min.js:12021
+[    4012ms] [LOG] method: GetAccountConfigurationRequest @ https://www.advantageonlineshopping.com/main.min.js:12022
+[    4012ms] [LOG] [jquery.soap - config:, Object] @ https://www.advantageonlineshopping.com/main.min.js:15546
+[    4013ms] [LOG] [jquery.soap - beforeSend:, <?xml version="1.0" encoding="UTF-8"?><soap:Envelo…ConfigurationRequest></soap:Body></soap:Envelope>] @ https://www.advantageonlineshopping.com/main.min.js:15546
+[    5737ms] [LOG] [jquery.soap - receive:, <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.…tionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>] @ https://www.advantageonlineshopping.com/main.min.js:15546
+[    5739ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    5739ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[    5739ms] [LOG] Path: https://www.advantageonlineshopping.com/catalog/api/v1/categories @ https://www.advantageonlineshopping.com/main.min.js:12028
+[    7357ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[    7357ms] [LOG] [Object, Object, Object, Object, Object] @ https://www.advantageonlineshopping.com/main.min.js:12033
+[    7358ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    7963ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[    7964ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[    7964ms] [LOG] Path: https://www.advantageonlineshopping.com/catalog/api/v1/deals/search?dealOfTheDay=true @ https://www.advantageonlineshopping.com/main.min.js:12028
+[    9737ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[    9737ms] [LOG] [Object] @ https://www.advantageonlineshopping.com/main.min.js:12033
+[    9738ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   10344ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   10344ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[   10344ms] [LOG] Path: app/tempFiles/popularProducts.json @ https://www.advantageonlineshopping.com/main.min.js:12028
+[   10986ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[   10986ms] [LOG] [Object, Object, Object] @ https://www.advantageonlineshopping.com/main.min.js:12033
+[   10987ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   10987ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11374
+[   10987ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11375
+[   10987ms] [LOG] popularProducts return from server @ https://www.advantageonlineshopping.com/main.min.js:11376
+[   10987ms] [LOG] ****************************** @ https://www.advantageonlineshopping.com/main.min.js:11377
+[   10987ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11378
+[   10987ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11379

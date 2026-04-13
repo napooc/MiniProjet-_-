@@ -1,0 +1,24 @@
+[   93207ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   93207ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[   93208ms] [LOG] Path: https://www.advantageonlineshopping.com/catalog/api/v1/categories/2/products @ https://www.advantageonlineshopping.com/main.min.js:12028
+[   95715ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11374
+[   95715ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11375
+[   95715ms] [LOG] category return from server @ https://www.advantageonlineshopping.com/main.min.js:11376
+[   95716ms] [LOG] ****************************** @ https://www.advantageonlineshopping.com/main.min.js:11377
+[   95716ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11378
+[   95716ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11379
+[   95716ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[   95716ms] [LOG] {categoryId: 2, categoryName: HEADPHONES, categoryImageId: headphones, promotedProduct: Object, attributes: Array(4)} @ https://www.advantageonlineshopping.com/main.min.js:12033
+[   95716ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   95717ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[   95717ms] [LOG] ===========================   Calling  =================================== @ https://www.advantageonlineshopping.com/main.min.js:12027
+[   95717ms] [LOG] Path: https://www.advantageonlineshopping.com/catalog/api/v1/categories/attributes @ https://www.advantageonlineshopping.com/main.min.js:12028
+[   97883ms] [LOG] ============================  Received  ================================== @ https://www.advantageonlineshopping.com/main.min.js:12032
+[   97884ms] [LOG] {data: Object, status: 200, headers: , config: Object, statusText: } @ https://www.advantageonlineshopping.com/main.min.js:12033
+[   97884ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:12041
+[  189948ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11374
+[  189948ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11375
+[  189948ms] [LOG] popularProducts return from app @ https://www.advantageonlineshopping.com/main.min.js:11376
+[  189948ms] [LOG] ****************************** @ https://www.advantageonlineshopping.com/main.min.js:11377
+[  189948ms] [LOG]   @ https://www.advantageonlineshopping.com/main.min.js:11378
+[  189949ms] [LOG]    @ https://www.advantageonlineshopping.com/main.min.js:11379

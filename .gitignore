@@ -1,0 +1,12 @@
+# Résultats Robot Framework
+advantage-robot/results/
+advantage-selenium/test-output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# VS Code
+.vscode/
