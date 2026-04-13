@@ -13,6 +13,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.11.3</junit.version>
     <selenium.version>4.41.0</selenium.version>
+    <webdrivermanager.version>6.1.0</webdrivermanager.version>
   </properties>
 
   <dependencies>
@@ -26,6 +27,11 @@
       <artifactId>junit-jupiter</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${webdrivermanager.version}</version>
     </dependency>
   </dependencies>
 

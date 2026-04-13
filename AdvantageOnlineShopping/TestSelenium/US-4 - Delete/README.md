@@ -543,4 +543,4 @@ US-4 - Delete/
 ---
 
 *Projet créé dans le cadre de la formation QA Automation — Capgemini*  
-*Architecture : Page Object Model | Framework : Selenium 4 + TestNG + Maven | Langage : Java 11*
+*Architecture : Page Object Model | Framework : Selenium 4 + TestNG + Maven | Langage : Java 17*

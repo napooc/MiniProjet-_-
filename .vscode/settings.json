@@ -29,9 +29,9 @@
     //   This venv contains robotframework + seleniumlibrary.
     //   RobotCode must use THIS Python (not the system Python) so it can find
     //   all Robot Framework keywords, libraries, and resources.
-    //   The .venv/Scripts/python.exe is the interpreter for this project.
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
-    "robotcode.python.defaultInterpreter": "${workspaceFolder}/.venv/Scripts/python.exe",
+    //   The .venv/bin/python is the interpreter for this project.
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "robotcode.python.defaultInterpreter": "${workspaceFolder}/.venv/bin/python",
 
     // ─── EDITOR SETTINGS FOR .robot / .resource FILES ───────────────
     // Robot Framework uses 4 spaces (or 2) as separator between tokens.
