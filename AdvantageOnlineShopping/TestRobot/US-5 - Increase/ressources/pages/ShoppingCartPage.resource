@@ -60,8 +60,10 @@ Move Mouse Away From Cart Icon
 
 Wait Until Cart Popup Is Gone
     # popup = div.toolTip (AdvantageDemo mini cart)
-    Run Keyword And Ignore Error    Wait Until Element Is Not Visible    xpath=//div[contains(@class,'toolTip')]    10s
-    Run Keyword And Ignore Error    Wait Until Page Does Not Contain   xpath=//div[contains(@class,'toolTip')]    5s
+    # Désactiver temporairement l'implicit wait pour ne pas bloquer 10s si le popup n'existe pas
+    Set Selenium Implicit Wait    0s
+    Run Keyword And Ignore Error    Wait Until Element Is Not Visible    xpath=//div[contains(@class,'toolTip')]    2s
+    Set Selenium Implicit Wait    10s
 
 
 Go To Shopping Cart Full Page
@@ -73,7 +75,7 @@ Go To Shopping Cart Full Page
         Execute JavaScript    document.querySelector('#shoppingCartLink').click();
     END
 
-    Wait Until Keyword Succeeds    15x    1s    Location Should Contain    shoppingCart
+    Wait Until Keyword Succeeds    3x    1s    Location Should Contain    shoppingCart
 
     # Ferme le popup mobile s'il reste (rare)
     #Run Keyword And Ignore Error    Wait Until Page Does Not Contain Element    xpath=//tool-tip-cart    5s
@@ -90,16 +92,16 @@ Click Edit From Shopping Cart
 
     # 1. S'assurer que le panier est visible
     Wait Until Cart Popup Is Gone
-    Wait Until Page Contains Element    xpath=//h3[contains(.,'SHOPPING CART')]    15s
+    Wait Until Page Contains Element    xpath=//h3[contains(.,'SHOPPING CART')]    1s
 
     # 2. Attendre le tableau des produits ET les lignes produit (Angular lazy render)
     Wait Until Element Is Visible
-    ...    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]    15s
-    Wait Until Element Is Visible     xpath=//th//label[@translate="PRODUCT_NAME"]     15s
+    ...    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]    1s
+    Wait Until Element Is Visible     xpath=//th//label[@translate="PRODUCT_NAME"]     1s
 
     # 3. Attendre qu'au moins une ligne produit soit présente dans le tbody
     Wait Until Element Is Visible
-    ...    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr    15s
+    ...    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr    1s
 
     # 4. Hover via JS + clic sur Edit via JS (contourne les contraintes CSS :hover)
     Execute JavaScript
@@ -108,7 +110,7 @@ Click Edit From Shopping Cart
     ...    for(var i=0;i<rows.length;i++){ if(rows[i].textContent.trim().toLowerCase().indexOf('${PRODUCT_NAME}'.toLowerCase())!==-1){ row=rows[i]; break; } }
     ...    if(!row && rows.length>0){ row=rows[0]; }
     ...    if(row){ row.dispatchEvent(new MouseEvent('mouseover',{bubbles:true,cancelable:true})); }
-    Sleep    1s
+    Sleep    0.3s
     Execute JavaScript
     ...    var rows = document.querySelectorAll('table.fixedTableEdgeCompatibility tbody tr');
     ...    var row = null;
@@ -117,7 +119,7 @@ Click Edit From Shopping Cart
     ...    var editBtn = row ? row.querySelector('a.edit') : null;
     ...    if(editBtn){ editBtn.click(); }
 
-    Wait Until Element Is Visible    ${LOC_champ_EDIT}    12s
+    Wait Until Element Is Visible    ${LOC_champ_EDIT}    1s
 
 
 
@@ -127,7 +129,6 @@ Update Quantity In champ
     Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
     Press Keys    ${LOC_QUANTITY_INPUT}    DELETE
     Input Text    ${LOC_QUANTITY_INPUT}    ${new_quantity}
-    Sleep    2s
 
 Click Add To Cart Button
     Wait Until Element Is Visible    ${LOC_ADD_TO_CART_BTN}    timeout=10s
@@ -140,13 +141,13 @@ Click Add To Cart Button
 Set Product Quantity
     [Arguments]    ${times}
     [Documentation]    Clique ${times} fois sur le bouton + en passant par EDIT (le bouton + n'existe pas sur la page panier)
-    Wait Until Element Is Visible    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr    timeout=15s
+    Wait Until Element Is Visible    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr    timeout=2s
     # Hover pour afficher le lien EDIT, puis cliquer dessus
     Mouse Over    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr
     Sleep    1s
     Execute JavaScript    var e=document.querySelector('a.edit'); if(e){e.click();}else{throw new Error('EDIT link not found');}
     # Attendre la page produit où le bouton + existe
-    Wait Until Element Is Visible    xpath=//div[@class='plus']    timeout=10s
+    Wait Until Element Is Visible    xpath=//div[@class='plus']    timeout=2s
     FOR    ${i}    IN RANGE    ${times}
         Click Element    xpath=//div[@class='plus']
         Sleep    1s

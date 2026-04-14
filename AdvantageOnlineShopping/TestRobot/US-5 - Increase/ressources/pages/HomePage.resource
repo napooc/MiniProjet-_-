@@ -16,7 +16,7 @@ ${LOC_QUANTITY_INPUT}         xpath=//input[@name="quantity"]
 *** Keywords ***
 Navigate To Cart
     Maximize Browser Window
-    Wait Until Element Is Visible    ${LOC_MENU_CART}    timeout=10s
+    Wait Until Element Is Visible    ${LOC_MENU_CART}    timeout=2s
     Click Element    ${LOC_MENU_CART}
     
 
@@ -29,20 +29,19 @@ Click Category
     ...    ${LOC_CATEGORY_SPEAKERS}
     Wait Until Element Is Visible    ${category_locator}    timeout=10s
     Click Element    ${category_locator}
-    Sleep    10s
+    Sleep    2s
 
 Select Product From Category
     [Arguments]    ${product_name}
     # Build dynamic locator by product text
     ${locator}=    Set Variable    xpath=//a[contains(.,'${product_name}')]
-    Wait Until Element Is Visible    ${locator}    15s
+    Wait Until Element Is Visible    ${locator}    2s
     Click Element    ${locator}
 
 Add Product To Cart From Product Page
     [Arguments]    ${quantity}=1  
-    Wait Until Element Is Visible    name=quantity    timeout=10s
+    Wait Until Element Is Visible    name=quantity    timeout=2s
     Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
     Press Keys    ${LOC_QUANTITY_INPUT}    DELETE
     Input Text    ${LOC_qt}    ${quantity}
     Click Button    ${LOC_ADD}
-    Sleep    2s
