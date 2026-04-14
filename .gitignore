@@ -1,8 +1,20 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+.env
+
+# Java / Maven build artifacts
 **/target/
-results/
+
+# Robot Framework and Selenium generated results
+**/results/
+**/test-output/
+**/surefire-reports/
 log.html
 report.html
 output.xml
 selenium-screenshot-*.png
+
+# IDE
+.vscode/
