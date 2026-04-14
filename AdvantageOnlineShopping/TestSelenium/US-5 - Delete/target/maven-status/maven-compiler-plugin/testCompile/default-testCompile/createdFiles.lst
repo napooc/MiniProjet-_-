@@ -1,0 +1,5 @@
+tests\CT_US5_02_EditerQuantitePourAugmentationTest.class
+pages\ShoppingCartPage.class
+pages\ProductPage.class
+pages\HomePage.class
+utils\WaitUtils.class
