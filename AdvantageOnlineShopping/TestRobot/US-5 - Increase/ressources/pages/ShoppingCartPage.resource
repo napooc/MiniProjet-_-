@@ -133,6 +133,53 @@ Click Add To Cart Button
     Wait Until Element Is Visible    ${LOC_ADD_TO_CART_BTN}    timeout=10s
     Click Button    ${LOC_ADD_TO_CART_BTN}
 
+
+
+
+
+Set Product Quantity
+    [Arguments]    ${times}
+    [Documentation]    Clique ${times} fois sur le bouton + en passant par EDIT (le bouton + n'existe pas sur la page panier)
+    Wait Until Element Is Visible    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr    timeout=15s
+    # Hover pour afficher le lien EDIT, puis cliquer dessus
+    Mouse Over    xpath=//table[contains(@class,'fixedTableEdgeCompatibility')]//tbody//tr
+    Sleep    1s
+    Execute JavaScript    var e=document.querySelector('a.edit'); if(e){e.click();}else{throw new Error('EDIT link not found');}
+    # Attendre la page produit où le bouton + existe
+    Wait Until Element Is Visible    xpath=//div[@class='plus']    timeout=10s
+    FOR    ${i}    IN RANGE    ${times}
+        Click Element    xpath=//div[@class='plus']
+        Sleep    1s
+    END
+    # Sauvegarder les modifications
+    Wait Until Element Is Visible    ${LOC_ADD_TO_CART_BTN}    timeout=10s
+    Click Button    ${LOC_ADD_TO_CART_BTN}
+    Sleep    2s
+    # Retourner au panier
+    Go To Shopping Cart Full Page
+
+
+
+
+
+
+
+*** Comments ***
+Click Increase Button In Shopping Cart
+    Wait Until Element Is Visible    xpath=//table[@class='fixedTableEdgeCompatibility']    10s
+    # Force-show the hover action buttons via JS, then click plus
+    Execute JavaScript
+    ...    var row = document.querySelector('table.fixedTableEdgeCompatibility tbody tr');
+    ...    if (!row) { throw new Error('No product row found in cart'); }
+    ...    var spans = row.querySelectorAll('span');
+    ...    spans.forEach(function(s){ s.style.visibility='visible'; s.style.display='inline-block'; });
+    ...    var plus = row.querySelector('div.plus');
+    ...    if (!plus) { throw new Error('Plus button not found in row'); }
+    ...    plus.click();
+    Sleep    2s
+
+
+*** Comments ***
 Click Increase Button In Shopping Cart
     Wait Until Element Is Visible    xpath=//table[@class='fixedTableEdgeCompatibility']    timeout=10s
     Execute JavaScript
