@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-04-12T12:55:48.036357" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Us3 Add To Cart" source="C:\Users\aouabir\OneDrive - Capgemini\Bureau\GitProjects\MiniProjet-_-\AdvantageOnlineShopping\TestRobot\US-3-ADD\suites\test_us3_add_to_cart.robot">
+<kw name="Open Application" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:55:48.606460" level="INFO">Opening browser 'Chrome' to base url 'http://advantageonlineshopping.com/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-12T12:55:48.606460" elapsed="3.844771"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-12T12:55:52.451231" elapsed="0.035150"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:55:48.601980" elapsed="3.884401"/>
+</kw>
+<test id="s1-t1" name="CT_US3_01_Add_Product_With_Quantity_Max_Allowed" line="15">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-04-12T12:55:52.486381" level="INFO">Opening url 'http://advantageonlineshopping.com/#/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-12T12:55:52.486381" elapsed="0.459840"/>
+</kw>
+<kw name="Open Category Tablets" owner="HomePage">
+<kw name="Open Category" owner="HomePage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${category_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:55:52.950895" elapsed="6.178485"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:55:59.131283" level="INFO">Clicking element '//div[@id="tabletsImg"]'.</msg>
+<arg>${category_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:55:59.130283" elapsed="0.212465"/>
+</kw>
+<arg>${CATEGORY_01_XPATH}</arg>
+<status status="PASS" start="2026-04-12T12:55:52.946221" elapsed="6.396527"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:55:52.946221" elapsed="6.397518"/>
+</kw>
+<kw name="Select Product Tablet" owner="CategoryPage">
+<kw name="Select Product" owner="CategoryPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@id="${product_id}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:55:59.346276" elapsed="3.685090"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:03.033365" level="INFO">Clicking element 'xpath=//img[@id="18"]'.</msg>
+<arg>xpath=//img[@id="${product_id}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:03.032360" elapsed="0.255025"/>
+</kw>
+<arg>${PRODUCT_01_ID}</arg>
+<status status="PASS" start="2026-04-12T12:55:59.344759" elapsed="3.942626"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:55:59.344759" elapsed="3.942626"/>
+</kw>
+<kw name="Select Color" owner="ProductPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[@title="${color}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:03.289397" elapsed="4.463248"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:07.753648" level="INFO">Clicking element 'xpath=//span[@title="BLACK"]'.</msg>
+<arg>xpath=//span[@title="${color}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:07.753648" elapsed="0.216845"/>
+</kw>
+<arg>${COLOR_BLACK}</arg>
+<status status="PASS" start="2026-04-12T12:56:03.288395" elapsed="4.682098"/>
+</kw>
+<kw name="Enter Quantity" owner="ProductPage">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>name=quantity</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:07.971492" elapsed="0.062150"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:08.033642" level="INFO">Typing text '10' into text field 'name=quantity'.</msg>
+<arg>name=quantity</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.033642" elapsed="0.108808"/>
+</kw>
+<arg>${QTE_MAX}</arg>
+<status status="PASS" start="2026-04-12T12:56:07.970493" elapsed="0.171957"/>
+</kw>
+<kw name="Add Product To Cart" owner="ProductPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Button_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.143448" elapsed="0.025803"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:08.170249" level="INFO">Clicking button '//button[@name="save_to_cart"]'.</msg>
+<arg>${Button_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.170249" elapsed="0.102293"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:08.143448" elapsed="0.129094"/>
+</kw>
+<kw name="Verify Product Added To Cart" owner="CartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CartLink_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.274540" elapsed="0.029827"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:08.330870" level="INFO">${cart_badge} = 10</msg>
+<var>${cart_badge}</var>
+<arg>${CartLink_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.304367" elapsed="0.026503"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${cart_badge}</arg>
+<arg>0</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.330870" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:08.331881" level="INFO">Clicking element '//a[@id="shoppingCartLink"]'.</msg>
+<arg>${CartLink_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.331881" elapsed="0.140561"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${product_name_token}' != ''</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>${product_name_token}</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.472442" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:08.273542" elapsed="0.199900"/>
+</kw>
+<kw name="Verify Cart Quantity" owner="CartPage">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:08.498604" level="INFO">Current page contains text '10'.</msg>
+<arg>${quantity}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.474441" elapsed="0.024163"/>
+</kw>
+<arg>${QTE_MAX}</arg>
+<status status="PASS" start="2026-04-12T12:56:08.474441" elapsed="0.024163"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:55:52.486381" elapsed="16.012223"/>
+</test>
+<test id="s1-t2" name="CT_US3_06_Add_Product_To_Cart_Without_Login" line="24">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-04-12T12:56:08.500732" level="INFO">Opening url 'http://advantageonlineshopping.com/#/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-04-12T12:56:08.500732" elapsed="0.890239"/>
+</kw>
+<kw name="Open Category Laptops" owner="HomePage">
+<kw name="Open Category" owner="HomePage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${category_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:09.392972" elapsed="6.242130"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:15.636605" level="INFO">Clicking element '//div[@id="laptopsImg"]'.</msg>
+<arg>${category_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:15.636099" elapsed="0.315017"/>
+</kw>
+<arg>${CATEGORY_06_XPATH}</arg>
+<status status="PASS" start="2026-04-12T12:56:09.392972" elapsed="6.558144"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:09.391969" elapsed="6.559147"/>
+</kw>
+<kw name="Select Product Laptop" owner="CategoryPage">
+<kw name="Select Product" owner="CategoryPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@id="${product_id}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:15.953115" elapsed="3.437611"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:19.391749" level="INFO">Clicking element 'xpath=//img[@id="1"]'.</msg>
+<arg>xpath=//img[@id="${product_id}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:19.390726" elapsed="0.317532"/>
+</kw>
+<arg>${PRODUCT_06_ID}</arg>
+<status status="PASS" start="2026-04-12T12:56:15.952113" elapsed="3.757157"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:15.952113" elapsed="3.757157"/>
+</kw>
+<kw name="Enter Quantity If Visible" owner="ProductPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:23.182260" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-12T12:56:23.182260" level="FAIL">Element 'name=quantity' not visible after 3 seconds.</msg>
+<arg>name=quantity</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-04-12T12:56:19.711271" elapsed="3.475500">Element 'name=quantity' not visible after 3 seconds.</status>
+</kw>
+<msg time="2026-04-12T12:56:23.187773" level="INFO">${has_quantity} = False</msg>
+<var>${has_quantity}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>name=quantity</arg>
+<arg>3s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-04-12T12:56:19.710275" elapsed="3.477498"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_quantity}</arg>
+<arg>Clear Element Text</arg>
+<arg>name=quantity</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.187773" elapsed="0.001008"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${has_quantity}</arg>
+<arg>Input Text</arg>
+<arg>name=quantity</arg>
+<arg>${quantity}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.188781" elapsed="0.001017"/>
+</kw>
+<arg>${QTE_MAX}</arg>
+<status status="PASS" start="2026-04-12T12:56:19.710275" elapsed="3.479523"/>
+</kw>
+<kw name="Add Product To Cart" owner="ProductPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Button_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.190778" elapsed="0.237560"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:23.430352" level="INFO">Clicking button '//button[@name="save_to_cart"]'.</msg>
+<arg>${Button_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.429353" elapsed="0.225308"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:23.190778" elapsed="0.463883"/>
+</kw>
+<kw name="Verify Product Added To Cart" owner="CartPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CartLink_xpath}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.657196" elapsed="0.034098"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:23.720425" level="INFO">${cart_badge} = 11</msg>
+<var>${cart_badge}</var>
+<arg>${CartLink_xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.692293" elapsed="0.028132"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${cart_badge}</arg>
+<arg>0</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.720425" elapsed="0.001040"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-12T12:56:23.721465" level="INFO">Clicking element '//a[@id="shoppingCartLink"]'.</msg>
+<arg>${CartLink_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.721465" elapsed="0.149947"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${product_name_token}' != ''</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>${product_name_token}</arg>
+<arg>20s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.872413" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:23.656178" elapsed="0.217233"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:08.499603" elapsed="15.373808"/>
+</test>
+<kw name="Close Application" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-12T12:56:23.875921" elapsed="2.611723"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:56:23.874410" elapsed="2.613234"/>
+</kw>
+<status status="PASS" start="2026-04-12T12:55:48.042497" elapsed="38.445147"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Us3 Add To Cart" id="s1" pass="2" fail="0" skip="0">Test Us3 Add To Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
