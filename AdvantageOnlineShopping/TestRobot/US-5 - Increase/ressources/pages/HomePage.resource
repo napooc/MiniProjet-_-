@@ -10,6 +10,7 @@ ${LOC_CATEGORY_LAPTOPS}             //div[@id='laptopsImg']
 ${LOC_CATEGORY_HEADPHONES}          //div[@id='headphonesImg'] 
 ${LOC_ADD}    //button[@name="save_to_cart"]
 ${LOC_qt}     //input[@name="quantity"]
+${LOC_QUANTITY_INPUT}         xpath=//input[@name="quantity"]
 
 
 *** Keywords ***
@@ -40,6 +41,8 @@ Select Product From Category
 Add Product To Cart From Product Page
     [Arguments]    ${quantity}=1  
     Wait Until Element Is Visible    name=quantity    timeout=10s
+    Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
+    Press Keys    ${LOC_QUANTITY_INPUT}    DELETE
     Input Text    ${LOC_qt}    ${quantity}
     Click Button    ${LOC_ADD}
     Sleep    2s

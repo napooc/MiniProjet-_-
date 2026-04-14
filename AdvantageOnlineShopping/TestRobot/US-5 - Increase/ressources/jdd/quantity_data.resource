@@ -7,6 +7,8 @@ ${VALID_QTY_1}              2
 ${VALID_QTY_2}              5
 ${VALID_QTY_3}              10
 ${INITIAL_QTY}              1
+${VALID_QTY_BTN_PLUS}       3
+
 
 # Quantités invalides
 ${INVALID_QTY_NEGATIVE}     -1
