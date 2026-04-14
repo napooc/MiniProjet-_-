@@ -5,7 +5,7 @@
 **Date :** Avril 2026  
 **Outils IA :** GitHub Copilot (Claude Sonnet 4.6)  
 **Frameworks :** Robot Framework 7.0 · SeleniumLibrary 6.3.0 · Selenium Java (TestNG)  
-**Périmètre couvert :** US-1 (Sign Up) · US-2 (Sign In) · US-3 (Add to Cart) · US-4 (Delete) · US-5 (Increase/Delete)
+**Périmètre couvert :** US-1 (Sign Up) · US-2 (Sign In) · US-3 (Add to Cart) · US-4 (Delete) · US-5 (Increase)
 
 ---
 
@@ -487,7 +487,6 @@ l'élément ciblé et le keyword associé."
 | US-3 Add | CT_US3_xx | Selenium Java | En cours | `US-3 - ADD/` |
 | US-4 Delete (cart) | CT_US4_01 | Robot Framework | En cours | `CT_US4_01.robot` |
 | US-4 Delete (home) | CT_US4_02 | Robot Framework | En cours | `CT_US4_02.robot` |
-| US-5 Delete | CT_US5_xx | Robot Framework | En cours | `US-5 - Delete/` |
 
 ### 4.6 Productivité, Risques et Limites de la Dépendance à l'IA
 
