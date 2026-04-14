@@ -13,10 +13,13 @@ public class SignUpTest extends AppTest {
 
    @Test(testName = "CT_US1_01")
    public void CT_US1_01_Inscription_Informations_Valides() {
+      String uniqueSuffix = String.valueOf(System.currentTimeMillis());
+      String username = "qa_auto_user_" + uniqueSuffix;
+      String email = username + "@test.com";
       this.openUserMenu();
       ((WebElement)this.wait.until(ExpectedConditions.elementToBeClickable(By.className("create-new-account")))).click();
-      ((WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("usernameRegisterPage")))).sendKeys("qa_auto_user");
-      this.driver.findElement(By.name("emailRegisterPage")).sendKeys("qa_auto_user@test.com");
+      ((WebElement)this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("usernameRegisterPage")))).sendKeys(username);
+      this.driver.findElement(By.name("emailRegisterPage")).sendKeys(email);
       this.driver.findElement(By.name("passwordRegisterPage")).sendKeys("Test@1234");
       this.driver.findElement(By.name("confirm_passwordRegisterPage")).sendKeys("Test@1234");
       this.driver.findElement(By.name("first_nameRegisterPage")).sendKeys("Test");
@@ -31,4 +34,3 @@ public class SignUpTest extends AppTest {
       Assert.assertFalse(this.driver.getPageSource().contains("username already exist"), "L'inscription a échoué : le nom d'utilisateur existe déjà");
    }
 }
-

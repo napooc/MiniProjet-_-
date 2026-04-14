@@ -107,15 +107,11 @@ Click Edit From Shopping Cart
     ...    var row = null;
     ...    for(var i=0;i<rows.length;i++){ if(rows[i].textContent.trim().toLowerCase().indexOf('${PRODUCT_NAME}'.toLowerCase())!==-1){ row=rows[i]; break; } }
     ...    if(!row && rows.length>0){ row=rows[0]; }
-    ...    if(row){ row.dispatchEvent(new MouseEvent('mouseover',{bubbles:true,cancelable:true})); }
-    Sleep    1s
-    Execute JavaScript
-    ...    var rows = document.querySelectorAll('table.fixedTableEdgeCompatibility tbody tr');
-    ...    var row = null;
-    ...    for(var i=0;i<rows.length;i++){ if(rows[i].textContent.trim().toLowerCase().indexOf('${PRODUCT_NAME}'.toLowerCase())!==-1){ row=rows[i]; break; } }
-    ...    if(!row && rows.length>0){ row=rows[0]; }
-    ...    var editBtn = row ? row.querySelector('a.edit') : null;
-    ...    if(editBtn){ editBtn.click(); }
+    ...    if(row){
+    ...      row.dispatchEvent(new MouseEvent('mouseover',{bubbles:true,cancelable:true}));
+    ...      var editBtn = row.querySelector('a.edit');
+    ...      if(editBtn){ editBtn.click(); }
+    ...    }
 
     Wait Until Element Is Visible    ${LOC_champ_EDIT}    12s
 
@@ -125,7 +121,7 @@ Update Quantity In champ
     [Arguments]    ${new_quantity}
     Wait Until Element Is Visible    ${LOC_QUANTITY_INPUT}    timeout=10s
     Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
-    Press Keys    ${LOC_QUANTITY_INPUT}    DELETE
+    Press Keys    ${LOC_QUANTITY_INPUT}    BACKSPACE
     Input Text    ${LOC_QUANTITY_INPUT}    ${new_quantity}
     Sleep    2s
 

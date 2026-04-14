@@ -168,7 +168,9 @@ public class ShoppingCartPage {
         WebElement row = WaitUtils.waitForVisible(driver, productRowByName);
         String rowName = row.findElement(By.xpath(".//h3")).getText().trim().toUpperCase(Locale.ROOT);
         String searchName = productName.trim().toUpperCase(Locale.ROOT);
-        if (rowName.contains(searchName) || searchName.contains(rowName.split(" ")[0])) {
+        String[] rowNameParts = rowName.split("\\s+");
+        String firstWord = rowNameParts.length > 0 ? rowNameParts[0] : "";
+        if (rowName.contains(searchName) || (!firstWord.isEmpty() && searchName.contains(firstWord))) {
             return row;
         }
         throw new IllegalStateException("Produit '" + productName + "' non trouve dans le panier. Trouve: " + rowName);
