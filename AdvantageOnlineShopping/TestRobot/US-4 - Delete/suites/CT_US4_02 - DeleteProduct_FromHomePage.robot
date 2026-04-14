@@ -1,7 +1,5 @@
 *** Settings ***
 Documentation    CT_US4_02 - Suppression d'un produit depuis le panier flottant (hover + X)
-Library    SeleniumLibrary
-Library    OperatingSystem
 Resource    ../config/import_resources.resource
 
 Suite Setup     Setup CT02
