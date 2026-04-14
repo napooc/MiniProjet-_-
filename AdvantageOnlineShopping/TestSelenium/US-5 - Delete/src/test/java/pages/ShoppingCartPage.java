@@ -80,7 +80,7 @@ public class ShoppingCartPage {
     }
 
     public boolean hasProduct(String productName) {
-        By productLink = By.xpath("//a[contains(normalize-space(),\"" + productName + "\")]");
+        By productLink = By.xpath("//a[contains(normalize-space(), " + toXpathLiteral(productName) + ")]");
         return !driver.findElements(productLink).isEmpty();
     }
 
@@ -208,5 +208,25 @@ public class ShoppingCartPage {
         } catch (ParseException e) {
             throw new IllegalArgumentException("Unable to parse monetary value: " + value, e);
         }
+    }
+
+    private String toXpathLiteral(String value) {
+        if (!value.contains("'")) {
+            return "'" + value + "'";
+        }
+        if (!value.contains("\"")) {
+            return "\"" + value + "\"";
+        }
+
+        StringBuilder xpath = new StringBuilder("concat(");
+        String[] parts = value.split("'");
+        for (int i = 0; i < parts.length; i++) {
+            if (i > 0) {
+                xpath.append(", \"'\", ");
+            }
+            xpath.append("'").append(parts[i]).append("'");
+        }
+        xpath.append(")");
+        return xpath.toString();
     }
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import java.util.UUID;
 
 public class SignUpTest extends AppTest {
    public SignUpTest() {
@@ -13,7 +14,7 @@ public class SignUpTest extends AppTest {
 
    @Test(testName = "CT_US1_01")
    public void CT_US1_01_Inscription_Informations_Valides() {
-      String uniqueSuffix = String.valueOf(System.currentTimeMillis());
+      String uniqueSuffix = UUID.randomUUID().toString().replace("-", "");
       String username = "qa_auto_user_" + uniqueSuffix;
       String email = username + "@test.com";
       this.openUserMenu();

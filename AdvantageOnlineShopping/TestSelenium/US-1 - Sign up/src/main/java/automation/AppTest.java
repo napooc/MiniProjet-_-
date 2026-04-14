@@ -15,8 +15,6 @@ public class AppTest {
    protected WebDriver driver;
    protected WebDriverWait wait;
    protected static final String BASE_URL = "https://www.advantageonlineshopping.com";
-   public static final String TEST_USERNAME = "qa_auto_user";
-   public static final String TEST_PASSWORD = "Test@1234";
 
    public AppTest() {
    }

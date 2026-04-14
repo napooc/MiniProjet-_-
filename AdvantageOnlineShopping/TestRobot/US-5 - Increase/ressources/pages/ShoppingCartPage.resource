@@ -120,8 +120,7 @@ Click Edit From Shopping Cart
 Update Quantity In champ
     [Arguments]    ${new_quantity}
     Wait Until Element Is Visible    ${LOC_QUANTITY_INPUT}    timeout=10s
-    Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
-    Press Keys    ${LOC_QUANTITY_INPUT}    BACKSPACE
+    Clear Element Text    ${LOC_QUANTITY_INPUT}
     Input Text    ${LOC_QUANTITY_INPUT}    ${new_quantity}
     Sleep    2s
 

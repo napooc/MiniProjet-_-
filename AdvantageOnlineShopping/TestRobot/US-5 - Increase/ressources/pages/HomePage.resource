@@ -41,8 +41,7 @@ Select Product From Category
 Add Product To Cart From Product Page
     [Arguments]    ${quantity}=1  
     Wait Until Element Is Visible    name=quantity    timeout=10s
-    Press Keys    ${LOC_QUANTITY_INPUT}    CTRL+a
-    Press Keys    ${LOC_QUANTITY_INPUT}    DELETE
+    Clear Element Text    ${LOC_QUANTITY_INPUT}
     Input Text    ${LOC_qt}    ${quantity}
     Click Button    ${LOC_ADD}
     Sleep    2s
