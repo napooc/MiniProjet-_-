@@ -1,0 +1,103 @@
+{
+  "description": "Jeux de Données de Test — US1 : Inscription utilisateur",
+  "us": "US-1 — Sign Up",
+  "generated_by": "Spec Driven Development + IA (GitHub Copilot)",
+  "date": "Avril 2026",
+
+  "valid_data": [
+    {
+      "id": "US1_V_01",
+      "scenario": "Inscription avec toutes les données valides",
+      "username": "JohnDoe2026",
+      "email": "johndoe2026@gmail.com",
+      "password": "Test@1234",
+      "confirm_password": "Test@1234",
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone": "0612345678",
+      "country": "France",
+      "expected_result": "Compte créé avec succès — utilisateur connecté automatiquement"
+    },
+    {
+      "id": "US1_V_02",
+      "scenario": "Inscription avec email professionnel",
+      "username": "MarieDupont99",
+      "email": "marie.dupont@capgemini.com",
+      "password": "Secure#2026",
+      "confirm_password": "Secure#2026",
+      "first_name": "Marie",
+      "last_name": "Dupont",
+      "phone": "0698765432",
+      "country": "France",
+      "expected_result": "Compte créé avec succès"
+    }
+  ],
+
+  "invalid_data": [
+    {
+      "id": "US1_I_01",
+      "scenario": "Email déjà utilisé",
+      "username": "JohnDoe2026",
+      "email": "johndoe2026@gmail.com",
+      "password": "Test@1234",
+      "confirm_password": "Test@1234",
+      "first_name": "John",
+      "last_name": "Doe",
+      "phone": "0612345678",
+      "country": "France",
+      "expected_result": "Erreur : email déjà enregistré"
+    },
+    {
+      "id": "US1_I_02",
+      "scenario": "Mot de passe trop court",
+      "username": "NewUser01",
+      "email": "newuser@gmail.com",
+      "password": "123",
+      "confirm_password": "123",
+      "first_name": "New",
+      "last_name": "User",
+      "phone": "0611111111",
+      "country": "France",
+      "expected_result": "Erreur : mot de passe invalide (trop court)"
+    },
+    {
+      "id": "US1_I_03",
+      "scenario": "Confirmation mot de passe différente",
+      "username": "TestUser",
+      "email": "testuser@gmail.com",
+      "password": "Test@1234",
+      "confirm_password": "Different@999",
+      "first_name": "Test",
+      "last_name": "User",
+      "phone": "0622222222",
+      "country": "France",
+      "expected_result": "Erreur : les mots de passe ne correspondent pas"
+    },
+    {
+      "id": "US1_I_04",
+      "scenario": "Format email invalide",
+      "username": "BadEmail",
+      "email": "pasunemail",
+      "password": "Test@1234",
+      "confirm_password": "Test@1234",
+      "first_name": "Bad",
+      "last_name": "Email",
+      "phone": "0633333333",
+      "country": "France",
+      "expected_result": "Erreur : format email invalide"
+    },
+    {
+      "id": "US1_I_05",
+      "scenario": "Tous les champs obligatoires vides",
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirm_password": "",
+      "first_name": "",
+      "last_name": "",
+      "phone": "",
+      "country": "",
+      "expected_result": "Erreur : champs obligatoires manquants"
+    }
+  ]
+}

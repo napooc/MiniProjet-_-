@@ -1,0 +1,45 @@
+{
+  "description": "Jeux de Données de Test — US4 : Suppression produit du panier",
+  "us": "US-4 — Delete from Cart",
+  "generated_by": "Spec Driven Development + IA (GitHub Copilot)",
+  "date": "Avril 2026",
+
+  "valid_data": [
+    {
+      "id": "US4_V_01",
+      "scenario": "Supprimer le seul produit du panier",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_to_add": "HP PAVILION 15-P078NR",
+      "product_to_delete": "HP PAVILION 15-P078NR",
+      "expected_result": "Panier vide après suppression — compteur = 0"
+    },
+    {
+      "id": "US4_V_02",
+      "scenario": "Supprimer un produit parmi plusieurs",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "products_in_cart": ["HP PAVILION 15-P078NR", "Sony Headphones"],
+      "product_to_delete": "Sony Headphones",
+      "expected_result": "Sony Headphones supprimé — HP PAVILION reste dans le panier"
+    }
+  ],
+
+  "invalid_data": [
+    {
+      "id": "US4_I_01",
+      "scenario": "Tentative de suppression depuis un panier vide",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "products_in_cart": [],
+      "expected_result": "Message panier vide affiché — aucune action de suppression disponible"
+    },
+    {
+      "id": "US4_I_02",
+      "scenario": "Suppression sans être connecté",
+      "username": "",
+      "password": "",
+      "expected_result": "Redirection vers page de connexion"
+    }
+  ]
+}

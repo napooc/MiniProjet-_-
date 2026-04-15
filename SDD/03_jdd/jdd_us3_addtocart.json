@@ -1,0 +1,50 @@
+{
+  "description": "Jeux de Données de Test — US3 : Ajout au panier",
+  "us": "US-3 — Add to Cart",
+  "generated_by": "Spec Driven Development + IA (GitHub Copilot)",
+  "date": "Avril 2026",
+
+  "valid_data": [
+    {
+      "id": "US3_V_01",
+      "scenario": "Ajout d'un produit disponible en stock",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "category": "Laptops",
+      "product_name": "HP PAVILION 15-P078NR",
+      "quantity": 1,
+      "expected_result": "Produit ajouté — compteur panier incrémenté à 1"
+    },
+    {
+      "id": "US3_V_02",
+      "scenario": "Ajout de plusieurs exemplaires du même produit",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "category": "Headphones",
+      "product_name": "Sony Headphones",
+      "quantity": 3,
+      "expected_result": "3 articles ajoutés — compteur panier = 3"
+    }
+  ],
+
+  "invalid_data": [
+    {
+      "id": "US3_I_01",
+      "scenario": "Ajout sans être connecté",
+      "username": "",
+      "password": "",
+      "product_name": "HP PAVILION 15-P078NR",
+      "quantity": 1,
+      "expected_result": "Redirection vers page de connexion"
+    },
+    {
+      "id": "US3_I_02",
+      "scenario": "Quantité = 0",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "Sony Headphones",
+      "quantity": 0,
+      "expected_result": "Erreur : quantité invalide — minimum 1"
+    }
+  ]
+}

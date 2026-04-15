@@ -1,0 +1,55 @@
+{
+  "description": "Jeux de Données de Test — US2 : Connexion utilisateur",
+  "us": "US-2 — Sign In",
+  "generated_by": "Spec Driven Development + IA (GitHub Copilot)",
+  "date": "Avril 2026",
+
+  "valid_data": [
+    {
+      "id": "US2_V_01",
+      "scenario": "Connexion avec identifiants valides",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "expected_result": "Connexion réussie — nom utilisateur affiché dans le header"
+    },
+    {
+      "id": "US2_V_02",
+      "scenario": "Connexion après déconnexion",
+      "username": "MarieDupont99",
+      "password": "Secure#2026",
+      "steps": ["Se connecter", "Se déconnecter", "Se reconnecter"],
+      "expected_result": "Reconnexion réussie — nom utilisateur réaffiché"
+    }
+  ],
+
+  "invalid_data": [
+    {
+      "id": "US2_I_01",
+      "scenario": "Mot de passe incorrect",
+      "username": "JohnDoe2026",
+      "password": "WrongPass999",
+      "expected_result": "Erreur : identifiants incorrects — connexion refusée"
+    },
+    {
+      "id": "US2_I_02",
+      "scenario": "Utilisateur inexistant",
+      "username": "UserInexistant123",
+      "password": "Test@1234",
+      "expected_result": "Erreur : utilisateur non trouvé"
+    },
+    {
+      "id": "US2_I_03",
+      "scenario": "Champs username et password vides",
+      "username": "",
+      "password": "",
+      "expected_result": "Erreur : champs obligatoires vides"
+    },
+    {
+      "id": "US2_I_04",
+      "scenario": "Tentative injection SQL",
+      "username": "' OR 1=1 --",
+      "password": "anything",
+      "expected_result": "Erreur : tentative bloquée — connexion refusée"
+    }
+  ]
+}

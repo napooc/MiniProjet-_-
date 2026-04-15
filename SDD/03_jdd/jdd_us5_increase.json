@@ -1,0 +1,69 @@
+{
+  "description": "Jeux de Données de Test — US5 : Augmentation quantité panier",
+  "us": "US-5 — Increase Items in Cart",
+  "generated_by": "Spec Driven Development + IA (GitHub Copilot)",
+  "date": "Avril 2026",
+
+  "valid_data": [
+    {
+      "id": "US5_V_01",
+      "scenario": "Augmenter la quantité de 1 à 3",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "HP PAVILION 15-P078NR",
+      "initial_quantity": 1,
+      "new_quantity": 3,
+      "expected_result": "Quantité mise à jour à 3 — prix total = prix unitaire × 3"
+    },
+    {
+      "id": "US5_V_02",
+      "scenario": "Augmenter à la quantité maximale autorisée",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "Sony Headphones",
+      "initial_quantity": 1,
+      "new_quantity": 10,
+      "expected_result": "Quantité mise à jour à 10 — total recalculé"
+    }
+  ],
+
+  "invalid_data": [
+    {
+      "id": "US5_I_01",
+      "scenario": "Quantité négative",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "HP PAVILION 15-P078NR",
+      "initial_quantity": 1,
+      "new_quantity": -1,
+      "expected_result": "Erreur : quantité invalide — minimum 1"
+    },
+    {
+      "id": "US5_I_02",
+      "scenario": "Quantité supérieure au stock disponible",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "HP PAVILION 15-P078NR",
+      "initial_quantity": 1,
+      "new_quantity": 9999,
+      "expected_result": "Erreur : stock insuffisant — quantité limitée"
+    },
+    {
+      "id": "US5_I_03",
+      "scenario": "Valeur non numérique dans le champ quantité",
+      "username": "JohnDoe2026",
+      "password": "Test@1234",
+      "product_name": "HP PAVILION 15-P078NR",
+      "initial_quantity": 1,
+      "new_quantity": "abc",
+      "expected_result": "Erreur : valeur non numérique rejetée automatiquement"
+    },
+    {
+      "id": "US5_I_04",
+      "scenario": "Modification sans être connecté",
+      "username": "",
+      "password": "",
+      "expected_result": "Redirection vers page de connexion"
+    }
+  ]
+}
